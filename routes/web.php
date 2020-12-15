@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/home', function () {
+//     return view('home')->name('home');
+// });
+
+// Route::get('/', 'RegisterController@getRegisterForm')->name('register');
+
+Route::get('/verify', 'RegisterController@getverify')->name('verify');
+
+Route::get('/dashboard', 'DashBoardController@getdash')->name('dashboard');
+
+Route::post('/register', 'RegisterController@create')->name('register');
+
+Route::post('/verify', 'RegisterController@verify')->name('verify');
+
