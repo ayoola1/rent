@@ -1,351 +1,720 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
-
-<!-- Mirrored from grandetest.com/theme/findhouse-html/page-contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Dec 2020 14:26:01 GMT -->
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="advanced search custom, agency, agent, business, clean, corporate, directory, google maps, homes, listing, membership packages, property, real estate, real estate agent, realestate agency, realtor">
-<meta name="description" content="FindHouse - Real Estate HTML Template">
-<meta name="CreativeLayers" content="ATFN">
-<!-- css file -->
-<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <!-- Responsive stylesheet -->
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-    <!-- Title -->
-    <title>FindHouse - Real Estate HTML Template</title>
-    <!-- Favicon -->
-    <link href="{{asset('images/favicon.ico')}}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
-    <link href="{{asset('images/favicon.ico')}}" sizes="128x128" rel="shortcut icon" />
+@extends('layouts.master')
 
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-<div class="wrapper">
-    <div class="preloader"></div>
+@section('content')
 
-    <!-- Main Header Nav -->
-    <header class="header-nav menu_style_home_one style2 navbar-scrolltofixed stricky main-menu">
-        <div class="container-fluid p0">
-            <!-- Ace Responsive Menu -->
-            <nav>
-                <!-- Menu Toggle btn-->
-                <div class="menu-toggle">
-                    <img class="nav_logo_img img-fluid" src="images/header-logo.png" alt="header-logo.png">
-                    <button type="button" id="menu-btn">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <a href="#" class="navbar_brand float-left dn-smd">
-                    <img class="logo1 img-fluid" src="images/header-logo2.png" alt="header-logo.png">
-                    <img class="logo2 img-fluid" src="images/header-logo2.png" alt="header-logo2.png">
-                    <span>FindHouse</span>
-                </a>
-                <!-- Responsive Menu Structure-->
-                <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
-                <ul id="respMenu" class="ace-responsive-menu text-right" data-menu-style="horizontal">
-                    <li>
-                        <a href="#"><span class="title">Home</span></a>
-                        <!-- Level Two-->
-                        <ul>
-                            <li><a href="index-2.html">Home 1</a></li>
-                            <li><a href="index2.html">Home 2</a></li>
-                            <li><a href="index3.html">Home 3</a></li>
-                            <li><a href="index4.html">Home 4</a></li>
-                            <li><a href="index5.html">Home 5</a></li>
-                            <li><a href="index6.html">Home 6</a></li>
-                            <li><a href="index7.html">Home 7</a></li>
-                            <li><a href="index8.html">Home 8</a></li>
-                            <li><a href="index9.html">Home 9</a></li>
-                            <li><a href="index10.html">Home 10</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span class="title">Listing</span></a>
-                        <!-- Level Two-->
-                        <ul>
-                            <li>
-                                <a href="#">Listing Grid</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-grid-v1.html">Grid v1</a></li>
-                                    <li><a href="page-listing-grid-v2.html">Grid v2</a></li>
-                                    <li><a href="page-listing-grid-v3.html">Grid v3</a></li>
-                                    <li><a href="page-listing-grid-v4.html">Grid v4</a></li>
-                                    <li><a href="page-listing-grid-v5.html">Grid v5</a></li>
-                                    <li><a href="page-listing-full-width-grid.html">Grid Fullwidth</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Listing List</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-list.html">List V1</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Listing Style</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-parallax.html">Parallax Style</a></li>
-                                    <li><a href="page-listing-slider.html">Slider Style</a></li>
-                                    <li><a href="page-listing-map.html">Map Header</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Listing Half</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-half-map-v1.html">Map V1</a></li>
-                                    <li><a href="page-listing-half-map-v2.html">Map V2</a></li>
-                                    <li><a href="page-listing-half-map-v3.html">Map V3</a></li>
-                                    <li><a href="page-listing-half-map-v4.html">Map V4</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Agent View</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-agent-v1.html">Agent V1</a></li>
-                                    <li><a href="page-listing-agent-v2.html">Agent V2</a></li>
-                                    <li><a href="page-listing-agent-v3.html">Agent Details</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Agencies View</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-agencies-v1.html">Agencies V1</a></li>
-                                    <li><a href="page-listing-agencies-v2.html">Agencies V2</a></li>
-                                    <li><a href="page-listing-agencies-v3.html">Agencies Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-add-new-property.html">Create Listing</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span class="title">Property</span></a>
-                        <ul>
-                            <li>
-                                <a href="#">User Admin</a>
-                                <ul>
-                                    <li><a href="page-dashboard.html">Dashboard</a></li>
-                                    <li><a href="page-my-properties.html">My Properties</a></li>
-                                    <li><a href="page-message.html">My Message</a></li>
-                                    <li><a href="page-my-review.html">My Review</a></li>
-                                    <li><a href="page-my-favorites.html">My Favorites</a></li>
-                                    <li><a href="page-add-new-property.html">Add Property</a></li>
-                                    <li><a href="page-my-profile.html">My Profile</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Listing Single</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-single-v1.html">Single V1</a></li>
-                                    <li><a href="page-listing-single-v2.html">Single V2</a></li>
-                                    <li><a href="page-listing-single-v3.html">Single V3</a></li>
-                                    <li><a href="page-listing-single-v4.html">Single V4</a></li>
-                                    <li><a href="page-listing-single-v5.html">Single V5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-add-new-property.html">Create Listing</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span class="title">Pages</span></a>
-                        <ul>
-                            <li>
-                                <a href="#"><span class="title">Pages</span></a>
-                                <ul>
-                                    <li><a href="page-shop.html">Shop</a></li>
-                                    <li><a href="page-shop-single.html">Shop Single</a></li>
-                                    <li><a href="page-shop-cart.html">Cart</a></li>
-                                    <li><a href="page-shop-checkout.html">Checkout</a></li>
-                                    <li><a href="page-shop-order.html">Order</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-about.html">About Us</a></li>
-                            <li><a href="page-gallery.html">Gallery</a></li>
-                            <li><a href="page-faq.html">Faq</a></li>
-                            <li><a href="page-login.html">LogIn</a></li>
-                        <li><a href="page-compare.html">Membership</a></li>
-                        <li><a href="page-compare2.html">Membership 2</a></li>
-                        <li><a href="page-register.html">Register</a></li>
-                            <li><a href="page-service.html">Service</a></li>
-                            <li><a href="page-error.html">404 Page</a></li>
-                            <li><a href="page-terms.html">Terms and Conditions</a></li>
-                            <li><a href="page-ui-element.html">UI Elements</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span class="title">Blog</span></a>
-                        <ul>
-                            <li><a href="page-blog-v1.html">Blog List 1</a></li>
-                            <li><a href="page-blog-grid.html">Blog List 2</a></li>
-                            <li><a href="page-blog-single.html">Single Post</a></li>
-                        </ul>
-                    </li>
-                    <li class="last">
-                        <a href="page-contact.html"><span class="title">Contact</span></a>
-                    </li>
-                    <li class="list-inline-item list_s"><a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a></li>
-                    <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <!-- Modal -->
-   
-
-    <!-- Main Header Nav For Mobile -->
-   
-
-    <!-- Inner Page Breadcrumb -->
- 
-
-    <!-- Our Contact -->
-    
-
-    <!-- Start Partners -->
-    <section class="start-partners bgc-thm pt50 pb50">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="start_partner tac-smd">
-                        <h2>Become a Real Estate Agent</h2>
-                        <p>We only work with the best companies around the globe</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="parner_reg_btn text-right tac-smd">
-                        <a class="btn btn-thm2" href="#">Register Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Footer -->
-    <section class="footer_one">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pr0 pl0">
-                    <div class="footer_about_widget">
-                        <h4>About Site</h4>
-                        <p>We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                    <div class="footer_qlink_widget">
-                        <h4>Quick Links</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">User’s Guide</a></li>
-                            <li><a href="#">Support Center</a></li>
-                            <li><a href="#">Press Info</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                    <div class="footer_contact_widget">
-                        <h4>Contact Us</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="__cf_email__" data-cfemail="066f68606946606f68626e697375632865696b">[email&#160;protected]</span></a></li>
-                            <li><a href="#">Collins Street West, Victoria</a></li>
-                            <li><a href="#">8007, Australia.</a></li>
-                            <li><a href="#">+1 246-345-0699</a></li>
-                            <li><a href="#">+1 246-345-0695</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                    <div class="footer_social_widget">
-                        <h4>Follow us</h4>
-                        <ul class="mb30">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a></li>
-                        </ul>
-                        <h4>Subscribe</h4>
-                        <form class="footer_mailchimp_form">
-                            <div class="form-row align-items-center">
-                                <div class="col-auto">
-                                    <input type="email" class="form-control mb-2" id="inlineFormInput" placeholder="Your email">
-                                </div>
-                                <div class="col-auto">
-                                    <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-angle-right"></i></button>
+<!-- Home Design -->
+        <section class="home-seven">
+            <div class="container">
+                <div class="row posr">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="home_content home7">
+                            <div class="home-text text-center">
+                                <h2 class="fz55">Discover your place to live</h2>
+                                <p class="fz18 color-white">Get started in few clicks.</p>
+                            </div>
+                            <div class="home_adv_srch_opt home7">
+                                <div class="home1-advnc-search home7">
+                                    <ul class="h1ads_1st_list mb0 text-center">
+                                        <li class="list-inline-item">
+                                            <div class="search_option_two">
+                                                <div class="candidate_revew_select">
+                                                    <select class="selectpicker w100 show-tick">
+                                                    <option>All Cities</option>
+                                                    <option>Apartment</option>
+                                                    <option>Bungalow</option>
+                                                    <option>Condo</option>
+                                                    <option>House</option>
+                                                    <option>Land</option>
+                                                    <option>Single Family</option>
+                                                </select>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Enter keyword...">
+                                            </div>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <div class="search_option_button">
+                                                <button type="submit" class="btn btn-thm">Search</button>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Our Footer Bottom Area -->
-    <section class="footer_middle_area pt40 pb40">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-xl-6">
-                    <div class="footer_menu_widget">
-                        <ul>
-                            <li class="list-inline-item"><a href="#">Home</a></li>
-                            <li class="list-inline-item"><a href="#">Listing</a></li>
-                            <li class="list-inline-item"><a href="#">Property</a></li>
-                            <li class="list-inline-item"><a href="#">Pages</a></li>
-                            <li class="list-inline-item"><a href="#">Blog</a></li>
-                            <li class="list-inline-item"><a href="#">Contact</a></li>
-                        </ul>
+        <!-- Why Chose Us -->
+        <section id="why-chose" class="whychose_us pb30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="main-title text-center">
+                            <h2>Why Choose Us</h2>
+                            <p>We provide full service at every step.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-xl-6">
-                    <div class="copyright-widget text-right">
-                        <p>© 2020 Find House. Made with love.</p>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="why_chose_us home7">
+                            <div class="icon">
+                                <span class="flaticon-high-five"></span>
+                            </div>
+                            <div class="details">
+                                <h4>Trusted By Thousands</h4>
+                                <p>Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="why_chose_us home7">
+                            <div class="icon">
+                                <span class="flaticon-home-1"></span>
+                            </div>
+                            <div class="details">
+                                <h4>Wide Renge Of Properties</h4>
+                                <p>Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="why_chose_us home7">
+                            <div class="icon">
+                                <span class="flaticon-profit"></span>
+                            </div>
+                            <div class="details">
+                                <h4>Financing Made Easy</h4>
+                                <p>Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-<a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
-</div>
-<!-- Wrapper End -->
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery-migrate-3.0.0.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery.mmenu.all.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/ace-responsive-menu.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/bootstrap-select.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/isotop.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/snackbar.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/simplebar.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/parallax.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/scrollto.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery-scrolltofixed-min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery.counterup.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/slider.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/timepicker.js')}}"></script>
-    <!-- Custom script for all pages -->
-    <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
-</body>
+        </section>
 
-<!-- Mirrored from grandetest.com/theme/findhouse-html/page-contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Dec 2020 14:26:01 GMT -->
-</html>
+        <!-- Feature Properties -->
+        <section id="feature-property" class="feature-property bgc-f7 pb30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="main-title text-center">
+                            <h2>Featured Properties</h2>
+                            <p>Handpicked properties by our team.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat_property home7">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+                                <div class="thmb_cntnt">
+                                    <ul class="tag mb0">
+                                        <li class="list-inline-item"><a href="#">For Rent</a></li>
+                                        <li class="list-inline-item"><a href="#">Featured</a></li>
+                                    </ul>
+                                    <ul class="icon mb0">
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+                                    </ul>
+                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Apartment</p>
+                                    <h4>Renovated Apartment</h4>
+                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
+                                    <ul class="prop_details mb0">
+                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
+                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
+                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                                    </ul>
+                                </div>
+                                <div class="fp_footer">
+                                    <ul class="fp_meta float-left mb0">
+                                        <li class="list-inline-item">
+                                            <a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                                    </ul>
+                                    <div class="fp_pdate float-right">4 years ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat_property home7">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/property/fp2.jpg" alt="fp2.jpg">
+                                <div class="thmb_cntnt">
+                                    <ul class="tag mb0">
+                                        <li class="list-inline-item"><a href="#">For Rent</a></li>
+                                        <li class="list-inline-item dn"></li>
+                                    </ul>
+                                    <ul class="icon mb0">
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+                                    </ul>
+                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Villa</p>
+                                    <h4>Gorgeous Villa Bay View</h4>
+                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
+                                    <ul class="prop_details mb0">
+                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
+                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
+                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                                    </ul>
+                                </div>
+                                <div class="fp_footer">
+                                    <ul class="fp_meta float-left mb0">
+                                        <li class="list-inline-item">
+                                            <a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                                    </ul>
+                                    <div class="fp_pdate float-right">4 years ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat_property home7">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/property/fp3.jpg" alt="fp3.jpg">
+                                <div class="thmb_cntnt">
+                                    <ul class="tag mb0">
+                                        <li class="list-inline-item"><a href="#">For Sale</a></li>
+                                        <li class="list-inline-item dn"></li>
+                                    </ul>
+                                    <ul class="icon mb0">
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+                                    </ul>
+                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Single Family Home</p>
+                                    <h4>Luxury Family Home</h4>
+                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
+                                    <ul class="prop_details mb0">
+                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
+                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
+                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                                    </ul>
+                                </div>
+                                <div class="fp_footer">
+                                    <ul class="fp_meta float-left mb0">
+                                        <li class="list-inline-item">
+                                            <a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                                    </ul>
+                                    <div class="fp_pdate float-right">4 years ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat_property home7">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/property/fp7.jpg" alt="fp7.jpg">
+                                <div class="thmb_cntnt">
+                                    <ul class="tag mb0">
+                                        <li class="list-inline-item"><a href="#">For Rent</a></li>
+                                        <li class="list-inline-item"><a href="#">Featured</a></li>
+                                    </ul>
+                                    <ul class="icon mb0">
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+                                    </ul>
+                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Apartment</p>
+                                    <h4>Luxury Family Home</h4>
+                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
+                                    <ul class="prop_details mb0">
+                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
+                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
+                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                                    </ul>
+                                </div>
+                                <div class="fp_footer">
+                                    <ul class="fp_meta float-left mb0">
+                                        <li class="list-inline-item">
+                                            <a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                                    </ul>
+                                    <div class="fp_pdate float-right">4 years ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat_property home7">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/property/fp8.jpg" alt="fp8.jpg">
+                                <div class="thmb_cntnt">
+                                    <ul class="tag mb0">
+                                        <li class="list-inline-item"><a href="#">For Rent</a></li>
+                                        <li class="list-inline-item dn"></li>
+                                    </ul>
+                                    <ul class="icon mb0">
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+                                    </ul>
+                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Apartment</p>
+                                    <h4>Renovated Apartment</h4>
+                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
+                                    <ul class="prop_details mb0">
+                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
+                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
+                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                                    </ul>
+                                </div>
+                                <div class="fp_footer">
+                                    <ul class="fp_meta float-left mb0">
+                                        <li class="list-inline-item">
+                                            <a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                                    </ul>
+                                    <div class="fp_pdate float-right">4 years ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat_property home7">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/property/fp9.jpg" alt="fp9.jpg">
+                                <div class="thmb_cntnt">
+                                    <ul class="tag mb0">
+                                        <li class="list-inline-item"><a href="#">For Rent</a></li>
+                                        <li class="list-inline-item dn"></li>
+                                    </ul>
+                                    <ul class="icon mb0">
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+                                    </ul>
+                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Villa</p>
+                                    <h4>Gorgeous Villa Bay View</h4>
+                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
+                                    <ul class="prop_details mb0">
+                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
+                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
+                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                                    </ul>
+                                </div>
+                                <div class="fp_footer">
+                                    <ul class="fp_meta float-left mb0">
+                                        <li class="list-inline-item">
+                                            <a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                                    </ul>
+                                    <div class="fp_pdate float-right">4 years ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Property Cities -->
+        <section id="property-city" class="property-city pb30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="main-title text-center">
+                            <h2>Find Properties in These Cities</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-xl-4">
+                        <div class="properti_city home7">
+                            <div class="thumb">
+                                <img class="img-fluid w100" src="images/property/pc1.jpg" alt="pc1.jpg">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="details">
+                                <h4>Miami</h4>
+                                <p>24 Properties</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-xl-8">
+                        <div class="properti_city home7">
+                            <div class="thumb">
+                                <img class="img-fluid w100" src="images/property/pc2.jpg" alt="pc2.jpg">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="details">
+                                <h4>Los Angeles</h4>
+                                <p>18 Properties</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-xl-8">
+                        <div class="properti_city home7">
+                            <div class="thumb">
+                                <img class="img-fluid w100" src="images/property/pc3.jpg" alt="pc3.jpg">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="details">
+                                <h4>New York</h4>
+                                <p>89 Properties</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-4">
+                        <div class="properti_city home7">
+                            <div class="thumb">
+                                <img class="img-fluid w100" src="images/property/pc4.jpg" alt="pc4.jpg">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="details">
+                                <h4>Florida</h4>
+                                <p>47 Properties</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Hot Offier -->
+        <section class="our-hot-offer parallax" data-stellar-background-ratio="0.3">
+            <div class="container">
+                <div class="row mt40">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="our_hotoffer">
+                            <h2>Hot This Week</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <button class="btn ht_offer">View All</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat_property home7 style2">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/property/fp2.jpg" alt="fp2.jpg">
+                                <div class="thmb_cntnt">
+                                    <ul class="tag mb0">
+                                        <li class="list-inline-item"><a href="#">For Rent</a></li>
+                                        <li class="list-inline-item dn"></li>
+                                    </ul>
+                                    <ul class="icon mb0">
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+                                    </ul>
+                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Villa</p>
+                                    <h4>Gorgeous Villa Bay View</h4>
+                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
+                                    <ul class="prop_details mb0">
+                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
+                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
+                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat_property home7 style2">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/property/fp3.jpg" alt="fp3.jpg">
+                                <div class="thmb_cntnt">
+                                    <ul class="tag mb0">
+                                        <li class="list-inline-item"><a href="#">For Sale</a></li>
+                                        <li class="list-inline-item dn"></li>
+                                    </ul>
+                                    <ul class="icon mb0">
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+                                    </ul>
+                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Single Family Home</p>
+                                    <h4>Luxury Family Home</h4>
+                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
+                                    <ul class="prop_details mb0">
+                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
+                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
+                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Testimonials -->
+        <section class="our-testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="main-title text-center mb20">
+                            <h2>Testimonials</h2>
+                            <p>Here could be a nice sub title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="testimonial_grid_slider style2">
+                            <div class="item">
+                                <div class="testimonial_grid style2">
+                                    <div class="thumb">
+                                        <img src="images/testimonial/1.jpg" alt="1.jpg">
+                                        <div class="tg_quote"><span class="fa fa-quote-left"></span></div>
+                                    </div>
+                                    <div class="details">
+                                        <h4>Augusta Silva</h4>
+                                        <p>Sales Manager</p>
+                                        <p class="mt25">Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimonial_grid style2">
+                                    <div class="thumb">
+                                        <img src="images/testimonial/1.jpg" alt="1.jpg">
+                                        <div class="tg_quote"><span class="fa fa-quote-left"></span></div>
+                                    </div>
+                                    <div class="details">
+                                        <h4>Augusta Silva</h4>
+                                        <p>Sales Manager</p>
+                                        <p class="mt25">Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimonial_grid style2">
+                                    <div class="thumb">
+                                        <img src="images/testimonial/1.jpg" alt="1.jpg">
+                                        <div class="tg_quote"><span class="fa fa-quote-left"></span></div>
+                                    </div>
+                                    <div class="details">
+                                        <h4>Augusta Silva</h4>
+                                        <p>Sales Manager</p>
+                                        <p class="mt25">Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimonial_grid style2">
+                                    <div class="thumb">
+                                        <img src="images/testimonial/1.jpg" alt="1.jpg">
+                                        <div class="tg_quote"><span class="fa fa-quote-left"></span></div>
+                                    </div>
+                                    <div class="details">
+                                        <h4>Augusta Silva</h4>
+                                        <p>Sales Manager</p>
+                                        <p class="mt25">Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimonial_grid style2">
+                                    <div class="thumb">
+                                        <img src="images/testimonial/1.jpg" alt="1.jpg">
+                                        <div class="tg_quote"><span class="fa fa-quote-left"></span></div>
+                                    </div>
+                                    <div class="details">
+                                        <h4>Augusta Silva</h4>
+                                        <p>Sales Manager</p>
+                                        <p class="mt25">Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Blog -->
+        <section class="our-blog bgc-f7 pb30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="main-title text-center">
+                            <h2>Articles & Tips</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="for_blog feat_property home7">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/blog/bh1.jpg" alt="bh1.jpg">
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Business</p>
+                                    <h4>Skills That You Can Learn In The Real Estate Market</h4>
+                                </div>
+                                <div class="fp_footer">
+                                    <ul class="fp_meta float-left mb0">
+                                        <li class="list-inline-item">
+                                            <a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                                    </ul>
+                                    <a class="fp_pdate float-right" href="#">7 August 2019</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="for_blog feat_property home7">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/blog/bh2.jpg" alt="bh2.jpg">
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Business</p>
+                                    <h4>Bedroom Colors You’ll Never <br class="dn-1199"> Regret</h4>
+                                </div>
+                                <div class="fp_footer">
+                                    <ul class="fp_meta float-left mb0">
+                                        <li class="list-inline-item">
+                                            <a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                                    </ul>
+                                    <a class="fp_pdate float-right" href="#">7 August 2019</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="for_blog feat_property home7">
+                            <div class="thumb">
+                                <img class="img-whp" src="images/blog/bh3.jpg" alt="bh3.jpg">
+                            </div>
+                            <div class="details">
+                                <div class="tc_content">
+                                    <p class="text-thm">Business</p>
+                                    <h4>5 Essential Steps for Buying an Investment</h4>
+                                </div>
+                                <div class="fp_footer">
+                                    <ul class="fp_meta float-left mb0">
+                                        <li class="list-inline-item">
+                                            <a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                                    </ul>
+                                    <a class="fp_pdate float-right" href="#">7 August 2019</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Partners -->
+        <section id="our-partners" class="our-partners">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="main-title text-center">
+                            <h2>Our Partners</h2>
+                            <p>We only work with the best companies around the globe</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg">
+                        <div class="our_partner">
+                            <img class="img-fluid" src="images/partners/1.png" alt="1.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg">
+                        <div class="our_partner">
+                            <img class="img-fluid" src="images/partners/2.png" alt="2.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg">
+                        <div class="our_partner">
+                            <img class="img-fluid" src="images/partners/3.png" alt="3.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg">
+                        <div class="our_partner">
+                            <img class="img-fluid" src="images/partners/4.png" alt="4.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg">
+                        <div class="our_partner">
+                            <img class="img-fluid" src="images/partners/5.png" alt="5.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Start Partners -->
+        <section class="start-partners home7 pt50 pb50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="start_partner tac-smd">
+                            <h2>Become a Real Estate Agent</h2>
+                            <p>We only work with the best companies around the globe</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="parner_reg_btn home7 text-right tac-smd">
+                            <a class="btn" href="#">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+@endsection
+        
+

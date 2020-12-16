@@ -72,7 +72,7 @@ class RegisterController extends Controller
             $user = tap(User::where('phone_number', $data['phone_number']))->update(['isVerified' => true]);
             /* Authenticate user */
             Auth::login($user->first());
-            return redirect()->route('dashboard')->with(['message' => 'Phone number verified']);
+            return redirect()->route('admin')->with(['message' => 'Phone number verified']);
         }
         return back()->with(['phone_number' => $data['phone_number'], 'error' => 'Invalid verification code entered!']);
     }

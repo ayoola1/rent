@@ -6,14 +6,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="keywords" content="advanced search custom, agency, agent, business, clean, corporate, directory, google maps, homes, listing, membership packages, property, real estate, real estate agent, realestate agency, realtor">
 <meta name="description" content="FindHouse - Real Estate HTML Template">
 <meta name="CreativeLayers" content="ATFN">
 <!-- css file -->
 <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <!-- Responsive stylesheet -->
-<link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 <link rel="stylesheet" href="{{asset('css/dashbord_navitaion.css')}}">
 <!-- Responsive stylesheet -->
 <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
@@ -56,7 +56,7 @@
 		        <!-- Responsive Menu Structure-->
 		        <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
 		        <ul id="respMenu" class="ace-responsive-menu text-right" data-menu-style="horizontal">
-		            <li>
+		           {{--  <li>
 		                <a href="#"><span class="title">Home</span></a>
 		                <!-- Level Two-->
 		                <ul>
@@ -197,13 +197,13 @@
 		                    <li><a href="page-blog-grid.html">Blog List 2</a></li>
 		                    <li><a href="page-blog-single.html">Single Post</a></li>
 		                </ul>
-		            </li>
-		            <li class="last">
+		            </li> --}}
+		            {{-- <li class="last">
 		                <a href="page-contact.html"><span class="title">Contact</span></a>
-		            </li>
+		            </li> --}}
 	                <li class="user_setting">
 						<div class="dropdown">
-	                		<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="images/team/e1.png" alt="e1.png"> <span class="dn-1199">Ali Tufan</span></a>
+	                		<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="images/team/e1.png" alt="e1.png"> <span class="dn-1199">{{Auth::user()->name}}</span></a>
 						    <div class="dropdown-menu">
 						    	<div class="user_set_header">
 						    		<img class="float-left" src="images/team/e1.png" alt="e1.png">
@@ -361,172 +361,120 @@
 	    <ul class="sidebar-menu">
 	   		<li class="header"><img src="images/header-logo2.png" alt="header-logo2.png"> FindHouse</li>
 	   		<li class="title"><span>Main</span></li>
-	    	<li class="treeview"><a href="page-dashboard.html"><i class="flaticon-layers"></i><span> Dashboard</span></a></li>
-	      	<li class="treeview"><a href="page-message.html"><i class="flaticon-envelope"></i><span> Message</span></a></li>
-	   		<li class="title"><span>Manage Listings</span></li>
+	    	<li class="treeview"><a href="{{route('admin')}}"><i class="flaticon-layers"></i><span> Dashboard
+	    	</span></a></li>
+
+	    	<li class="treeview">
+		        <a href="page-my-properties.html"><i class="flaticon-user"></i> <span>Profile</span><i class="fa fa-angle-down pull-right"></i></a>
+		        <ul class="treeview-menu">
+		        	<li><a href="{{route('profile.index')}}"><i class="fa fa-circle"></i>View Profile</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Change Password</a></li>
+		        	
+		        </ul>
+	      	</li>
+
+	    	<li class="treeview">
+		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Landlord</span><i class="fa fa-angle-down pull-right"></i></a>
+		        <ul class="treeview-menu">
+		        	<li><a href="#"><i class="fa fa-circle"></i>View Landlords</a></li>
+		        	{{-- <li><a href="#"><i class="fa fa-circle"></i> Advanced Elements</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i> Editors</a></li> --}}
+		        </ul>
+	      	</li>
+
 	      	<li class="treeview">
-		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>My Properties</span><i class="fa fa-angle-down pull-right"></i></a>
+		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Tenant</span><i class="fa fa-angle-down pull-right"></i></a>
 		        <ul class="treeview-menu">
-		        	<li><a href="#"><i class="fa fa-circle"></i> General Elements</a></li>
-		        	<li><a href="#"><i class="fa fa-circle"></i> Advanced Elements</a></li>
-		        	<li><a href="#"><i class="fa fa-circle"></i> Editors</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>View Tenants</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Tenant Oustanding</a></li>
+		        	{{-- <li><a href="#"><i class="fa fa-circle"></i> Editors</a></li> --}}
 		        </ul>
 	      	</li>
-	      	<li><a href="page-my-favorites.html"><i class="flaticon-heart"></i> <span> My Favorites</span></a></li>
-	      	<li><a href="page-my-savesearch.html"><i class="flaticon-magnifying-glass"></i> <span>Saved Search</span></a></li>
-	     	<li class="treeview">
-		        <a href="page-my-review.html"><i class="flaticon-chat"></i><span> Reviews</span><i class="fa fa-angle-down pull-right"></i></a>
+
+
+	      	<li class="treeview">
+		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Properties</span><i class="fa fa-angle-down pull-right"></i></a>
 		        <ul class="treeview-menu">
-		        	<li><a href="#"><i class="fa fa-circle"></i> My Reviews</a></li>
-		        	<li><a href="#"><i class="fa fa-circle"></i> Visitor Reviews</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Properties Mortgages</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Properties Rent</a></li>
+		        	{{-- <li><a href="#"><i class="fa fa-circle"></i> Editors</a></li> --}}
 		        </ul>
 	      	</li>
-	   		<li class="title"><span>Manage Account</span></li>
-		    <li><a href="page-my-packages.html"><i class="flaticon-box"></i> <span>My Package</span></a></li>
-		    <li><a href="page-my-profile.html"><i class="flaticon-user"></i> <span>My Profile</span></a></li>
+
+
+	      	<li class="treeview">
+		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Bill</span><i class="fa fa-angle-down pull-right"></i></a>
+		        <ul class="treeview-menu">
+		        	<li><a href="#"><i class="fa fa-circle"></i>View Bills</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Bill Payment Records</a></li>
+		        	{{-- <li><a href="#"><i class="fa fa-circle"></i> Editors</a></li> --}}
+		        </ul>
+	      	</li>
+
+	   		{{-- <li class="title"><span>Manage Listings</span></li> --}}
+	      	<li class="treeview">
+		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Wallet Account</span><i class="fa fa-angle-down pull-right"></i></a>
+		        <ul class="treeview-menu">
+		        	<li><a href="#"><i class="fa fa-circle"></i>Deposit Funds</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Make Withdrawal</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Make Payment</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Wallet Transaction</a></li>
+		        </ul>
+	      	</li>
+	      	
+             
+             <li class="treeview">
+		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Contract Document</span><i class="fa fa-angle-down pull-right"></i></a>
+		        <ul class="treeview-menu">
+		        	<li><a href="#"><i class="fa fa-circle"></i>View Contract</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Contract Type</a></li>
+		        	
+		        </ul>
+	      	</li>
+
+	      	<li class="treeview">
+		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Reports</span><i class="fa fa-angle-down pull-right"></i></a>
+		        <ul class="treeview-menu">
+		        	<li><a href="#"><i class="fa fa-circle"></i>Bill Payment  Report</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Wallet Cash Flow</a></li>
+		            <li><a href="#"><i class="fa fa-circle"></i>Property Report</a></li>
+		        	
+		        </ul>
+	      	</li>
+
+	      	<li class="treeview">
+		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Loan</span><i class="fa fa-angle-down pull-right"></i></a>
+		        <ul class="treeview-menu">
+		        	<li><a href="#"><i class="fa fa-circle"></i>Loan Offers</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i>Applied Loans</a></li>
+		            <li><a href="#"><i class="fa fa-circle"></i>Loan Payment Report</a></li>
+		        	
+		        </ul>
+	      	</li>
+
+
+		    
 		    <li><a href="page-login.html"><i class="flaticon-logout"></i> <span>Logout</span></a></li>
 	    </ul>
     </div>
 
+
 	<!-- Our Dashbord -->
-	<section class="our-dashbord dashbord bgc-f7 pb50">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-3 col-xl-2 dn-992 pl0"></div>
-				<div class="col-lg-9 col-xl-10 maxw100flex-992">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="dashboard_navigationbar dn db-992">
-								<div class="dropdown">
-									<button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars pr10"></i> Dashboard Navigation</button>
-									<ul id="myDropdown" class="dropdown-content">
-										<li class="active"><a href="page-dashboard.html"><span class="flaticon-layers"></span> Dashboard</a></li>
-										<li><a href="page-message.html"><span class="flaticon-envelope"></span> Message</a></li>
-										<li><a href="page-my-properties.html"><span class="flaticon-home"></span> My Properties</a></li>
-										<li><a href="page-my-favorites.html"><span class="flaticon-heart"></span> My Favorites</a></li>
-										<li><a href="page-my-savesearch.html"><span class="flaticon-magnifying-glass"></span> Saved Search</a></li>
-										<li><a href="page-my-review.html"><span class="flaticon-chat"></span> My Reviews</a></li>
-										<li><a href="page-my-packages.html"><span class="flaticon-box"></span> My Package</a></li>
-										<li><a href="page-my-profile.html"><span class="flaticon-user"></span> My Profile</a></li>
-										<li><a href="page-add-new-property.html"><span class="flaticon-filter-results-button"></span> Add New Listing</a></li>
-										<li><a href="page-login.html"><span class="flaticon-logout"></span> Logout</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12 mb10">
-							<div class="breadcrumb_content style2">
-								<h2 class="breadcrumb_title">Howdy, Ali!</h2>
-								<p>We are glad to see you again!</p>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
-							<div class="ff_one">
-								<div class="icon"><span class="flaticon-home"></span></div>
-								<div class="detais">
-									<div class="timer">37</div>
-									<p>All Properties</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
-							<div class="ff_one style2">
-								<div class="icon"><span class="flaticon-view"></span></div>
-								<div class="detais">
-									<div class="timer">24</div>
-									<p>Total Views</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
-							<div class="ff_one style3">
-								<div class="icon"><span class="flaticon-chat"></span></div>
-								<div class="detais">
-									<div class="timer">12</div>
-									<p>Total Visitor Reviews</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
-							<div class="ff_one style4">
-								<div class="icon"><span class="flaticon-heart"></span></div>
-								<div class="detais">
-									<div class="timer">18</div>
-									<p>Total Favorites</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-7">
-							<div class="application_statics">
-								<h4>View Statistics</h4>
-								<div class="c_container"></div>
-							</div>
-						</div>
-						<div class="col-xl-5">
-							<div class="recent_job_activity">
-								<h4 class="title">Recent Activities</h4>
-								<div class="grid">
-									<ul>
-										<li class="list-inline-item"><div class="icon"><span class="flaticon-home"></span></div></li>
-										<li class="list-inline-item"><p>Your listing <strong>Luxury Family Home</strong> has been approved!.</p></li>
-									</ul>
-								</div>
-								<div class="grid">
-									<ul>
-										<li class="list-inline-item"><div class="icon"><span class="flaticon-chat"></span></div></li>
-										<li class="list-inline-item"><p>Kathy Brown left a review  on <strong>Renovated Apartment</strong></p></li>
-									</ul>
-								</div>
-								<div class="grid">
-									<ul>
-										<li class="list-inline-item"><div class="icon"><span class="flaticon-heart"></span></div></li>
-										<li class="list-inline-item"><p>Someone favorites your <strong>Gorgeous Villa Bay View</strong> listing!</p></li>
-									</ul>
-								</div>
-								<div class="grid">
-									<ul>
-										<li class="list-inline-item"><div class="icon"><span class="flaticon-home"></span></div></li>
-										<li class="list-inline-item"><p>Your listing <strong>Luxury Family Home</strong> has been approved!</p></li>
-									</ul>
-								</div>
-								<div class="grid">
-									<ul>
-										<li class="list-inline-item"><div class="icon"><span class="flaticon-chat"></span></div></li>
-										<li class="list-inline-item"><p>Kathy Brown left a review on <strong>Renovated Apartment</strong></p></li>
-									</ul>
-								</div>
-								<div class="grid mb0">
-									<ul class="pb0 mb0 bb_none">
-										<li class="list-inline-item"><div class="icon"><span class="flaticon-heart"></span></div></li>
-										<li class="list-inline-item"><p>Someone favorites your <strong>Gorgeous Villa Bay</strong> View listing!</p></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row mt50">
-						<div class="col-lg-6 offset-lg-3">
-							<div class="copyright-widget text-center">
-								<p>© 2020 Find House. Made with love.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+@yield('content')
+
+
 <a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
 </div>
 <!-- Wrapper End -->
 <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/jquery-migrate-3.0.0.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/jquery.mmenu.all.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/ace-responsive-menu.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/chart.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/chart-custome.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/bootstrap-select.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/isotop.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/snackbar.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/simplebar.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/parallax.js')}}"></script>
@@ -534,11 +482,13 @@
 <script type="text/javascript" src="{{asset('js/jquery-scrolltofixed-min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/jquery.counterup.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/progressbar.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/slider.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/timepicker.js')}}"></script>
-<script type="text/javascript" src="js/dashboard-script.js"></script>
+<script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/dashboard-script.js')}}"></script>
 <!-- Custom script for all pages --> 
- <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 </body>
 
 <!-- Mirrored from grandetest.com/theme/findhouse-html/page-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Dec 2020 14:24:58 GMT -->

@@ -25,9 +25,13 @@ Route::get('/', function () {
 
 Route::get('/verify', 'RegisterController@getverify')->name('verify');
 
-Route::get('/dashboard', 'DashBoardController@getdash')->name('dashboard');
+Route::get('/dashboard', 'DashBoardController@getdashboard')->name('dashboard');
 
 Route::post('/register', 'RegisterController@create')->name('register');
 
 Route::post('/verify', 'RegisterController@verify')->name('verify');
 
+Route::resource("admin/tenant",'TenantController');
+Route::resource("admin/profile",'ProfileController');
+
+Route::get('admin','AdminController@index')->name('admin');
