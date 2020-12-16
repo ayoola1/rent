@@ -35,3 +35,15 @@ Route::resource("admin/tenant",'TenantController');
 Route::resource("admin/profile",'ProfileController');
 
 Route::get('admin','AdminController@index')->name('admin');
+
+//PagesController
+Route::get('/pages/about', 'PagesController@about')->name('about');
+Route::get('/pages/contact', 'PagesController@contact')->name('contact');
+Route::get('/pages/faq', 'PagesController@faq')->name('faq');
+Route::get('/pages/gallery', 'PagesController@gallery')->name('gallery');
+Route::get('/pages/service', 'PagesController@service')->name('service');
+Route::get('/pages/terms', 'PagesController@terms')->name('terms');
+
+//PropertyController
+Route::get('/property/property-index', 'PropertyController@property_index')->name('property_index');
+Route::get('/property/property-show', 'PropertyController@property_show')->name('property_show');
