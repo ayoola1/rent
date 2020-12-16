@@ -45,5 +45,5 @@ Route::get('/pages/service', 'PagesController@service')->name('service');
 Route::get('/pages/terms', 'PagesController@terms')->name('terms');
 
 //PropertyController
-Route::get('/property/property-index', 'PropertyController@property_index')->name('property_index');
-Route::get('/property/property-show', 'PropertyController@property_show')->name('property_show');
+Route::get('/property/property-index', 'PropertiController@property_index')->name('property_index');
+Route::get('/property/property-show', 'PropertiController@property_show')->name('property_show');
