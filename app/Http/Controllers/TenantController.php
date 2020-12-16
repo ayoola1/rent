@@ -4,6 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Tenant;
+
+use App\User;
+
+use App\Role;
+
+use App\Landlord;
+
+use App\Property;
+
 class TenantController extends Controller
 {
     /**
@@ -13,7 +23,7 @@ class TenantController extends Controller
      */
     public function index()
     {
-        return view('tenant.index');
+        return view('admin.tenant.index');
     }
 
     /**
@@ -23,7 +33,8 @@ class TenantController extends Controller
      */
     public function create()
     {
-        //
+
+
     }
 
     /**
@@ -45,7 +56,9 @@ class TenantController extends Controller
      */
     public function show($id)
     {
-        //
+        $tenant = Tenant::find($id);
+
+        return view('admin.tenant.index',compact('tenant'));
     }
 
     /**
@@ -68,7 +81,15 @@ class TenantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tenant = Tenant::findOrFail($id);
+
+        $input = $request->all();
+
+        $tenant->update($input);
+
+        Session::flash('the_user','Tenant is successfully Updated!');
+
+        return redirect()->route('tenant.index');
     }
 
     /**
@@ -79,6 +100,12 @@ class TenantController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tenant = Tenant::findOrFail($id);
+
+        $tenant->delete();
+
+        Session::flash('the_user','Tenant has been deleted');
+
+        return redirect()->route('tenant.index');
     }
 }
