@@ -57,7 +57,7 @@ class PropertyController extends Controller
     {
        $property = Property::findOrFail($id);
 
-       return $property->tenant->landlord->address;
+       return view('');
     }
 
     /**
@@ -91,6 +91,12 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $landlord = Landlord::findOrFail($id);
+
+        $landlord->delete();
+
+        Session::flash('the_user','Landlord has been updated!');
+
+        return redirect()->route('');
     }
 }

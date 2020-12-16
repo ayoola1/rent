@@ -48,7 +48,7 @@ class TypeController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -59,7 +59,7 @@ class TypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -71,7 +71,16 @@ class TypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $type = Type::findOrFail($id);
+
+        $input = $request->all();
+
+        $type->update();
+
+        Session::flash('the_user','Property type has been updated!');
+
+        return redirect()->route('');
     }
 
     /**
@@ -82,6 +91,12 @@ class TypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $type = Type::findOrFail($id);
+
+        $type->delete();
+
+        Session::flash('the_user','Property type has been deleted');
+
+        return redirect()->route('');
     }
 }

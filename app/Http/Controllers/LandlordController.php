@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Session;
+
 use App\Tenant;
 
 use App\User;
@@ -57,11 +59,8 @@ class LandlordController extends Controller
     {
         $landlord = Landlord::findOrFail($id);
 
-
-         foreach ($landlord->tenants as $tenant) {
-             
-              return $tenant->gender;
-         }
+        return view();
+         
     }
 
     /**
@@ -84,7 +83,15 @@ class LandlordController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $landlord = Landlord::findOrFail($id);
+
+        $input = $request->all();
+
+        $landlord->update();
+
+        Session::flash('the_user','Landlord has been updated!');
+
+        return redirect()->route('');
     }
 
     /**
@@ -95,6 +102,12 @@ class LandlordController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $landlord = Landlord::findOrFail($id);
+
+        $landlord->delete();
+
+        Session::flash('the_user','Landlord has been updated!');
+
+        return redirect()->route('');
     }
 }
