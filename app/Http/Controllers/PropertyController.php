@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Tenant;
+
 use App\User;
-
-use Illuminate\Support\Facades\Hash;
-
-use Illuminate\Support\Facades\Session;
 
 use App\Role;
 
-class ProfileController extends Controller
+use App\Landlord;
+
+use App\Property;
+
+class PropertyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +23,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        // return view('admin.profile.index');
+        //
     }
 
     /**
@@ -31,7 +33,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -42,7 +44,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
 
     /**
@@ -53,9 +55,9 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+       $property = Property::findOrFail($id);
 
-        return view('admin.profile.index',compact('user'));
+       return view('');
     }
 
     /**
@@ -66,7 +68,7 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**
@@ -78,27 +80,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $user = User::findOrFail($id);
-
-        $input = $request->all();
-
-        if($request->password == ''){
-
-           $input = $request->except('password');
-        }
-        else{
-
-            $input['password'] = Hash::make($request->password);
-        }
-
-
-        $user->update($input);
-
-        Session::flash('the_user','Profile has beeen Updated!');
-
-        return redirect()->route('profile.index');
-
+        //
     }
 
     /**
@@ -109,13 +91,12 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-         
-         $user = User::findOrFail($id);
+        $landlord = Landlord::findOrFail($id);
 
-         $user->delete();
+        $landlord->delete();
 
-         Session::flash('the_deleted', 'The user has been deleted!');
+        Session::flash('the_user','Landlord has been updated!');
 
-         return redirect()->route('profile.index');
+        return redirect()->route('');
     }
 }

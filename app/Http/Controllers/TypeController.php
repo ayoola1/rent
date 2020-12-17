@@ -4,15 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\User;
+use App\Type;
+use App\Property;
 
-use Illuminate\Support\Facades\Hash;
-
-use Illuminate\Support\Facades\Session;
-
-use App\Role;
-
-class ProfileController extends Controller
+class TypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +16,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        // return view('admin.profile.index');
+        //
     }
 
     /**
@@ -31,7 +26,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -42,7 +37,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
 
     /**
@@ -53,9 +48,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-
-        return view('admin.profile.index',compact('user'));
+        
     }
 
     /**
@@ -66,7 +59,7 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-
+        
     }
 
     /**
@@ -79,26 +72,15 @@ class ProfileController extends Controller
     public function update(Request $request, $id)
     {
 
-        $user = User::findOrFail($id);
+        $type = Type::findOrFail($id);
 
         $input = $request->all();
 
-        if($request->password == ''){
+        $type->update();
 
-           $input = $request->except('password');
-        }
-        else{
+        Session::flash('the_user','Property type has been updated!');
 
-            $input['password'] = Hash::make($request->password);
-        }
-
-
-        $user->update($input);
-
-        Session::flash('the_user','Profile has beeen Updated!');
-
-        return redirect()->route('profile.index');
-
+        return redirect()->route('');
     }
 
     /**
@@ -109,13 +91,12 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-         
-         $user = User::findOrFail($id);
+        $type = Type::findOrFail($id);
 
-         $user->delete();
+        $type->delete();
 
-         Session::flash('the_deleted', 'The user has been deleted!');
+        Session::flash('the_user','Property type has been deleted');
 
-         return redirect()->route('profile.index');
+        return redirect()->route('');
     }
 }

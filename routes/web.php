@@ -31,8 +31,12 @@ Route::post('/register', 'RegisterController@create')->name('register');
 
 Route::post('/verify', 'RegisterController@verify')->name('verify');
 
-Route::resource("admin/tenant",'TenantController');
+Route::resource("/property",'PropertyController');
+Route::resource("/landlord",'LandlordController');
+Route::resource("/tenant",'TenantController');
+Route::resource("/type",'TypeController');
 Route::resource("admin/profile",'ProfileController');
+;
 
 Route::get('admin','AdminController@index')->name('admin');
 

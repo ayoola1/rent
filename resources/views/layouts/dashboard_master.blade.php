@@ -203,7 +203,7 @@
 		            </li> --}}
 	                <li class="user_setting">
 						<div class="dropdown">
-	                		<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="images/team/e1.png" alt="e1.png"> <span class="dn-1199">{{Auth::user()->name}}</span></a>
+	                		<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="images/team/e1.png" alt="e1.png"> <span class="dn-1199">{{-- {{Auth::user()->name}} --}}</span></a>
 						    <div class="dropdown-menu">
 						    	<div class="user_set_header">
 						    		<img class="float-left" src="images/team/e1.png" alt="e1.png">
