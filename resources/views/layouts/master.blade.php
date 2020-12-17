@@ -114,7 +114,8 @@
                                 </div>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="login_form">
-                                        <form action="#">
+                                        <form action="{{route('login')}}" method="POST">
+                                            @csrf
                                             <div class="heading">
                                                 <h4>Login</h4>
                                             </div>
@@ -128,16 +129,26 @@
                                             </div>
                                             <hr>
                                             <div class="input-group mb-2 mr-sm-2">
-                                                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="User Name Or Email">
+                                                <input type="text" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" id="inlineFormInputGroupUsername2" placeholder="User Name Or Email">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="flaticon-user"></i></div>
                                                 </div>
+                                                @if ($errors->has('email'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                            @endif
                                             </div>
                                             <div class="input-group form-group">
-                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" value="{{ old('password') }}" id="exampleInputPassword1" placeholder="Password">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="flaticon-password"></i></div>
                                                 </div>
+                                                @if ($errors->has('password'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                            @endif
                                             </div>
                                             <div class="form-group custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="exampleCheck1">

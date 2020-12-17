@@ -45,12 +45,23 @@ Route::resource("/property",'PropertyController');
 Route::resource("/landlord",'LandlordController');
 Route::resource("/tenant",'TenantController');
 Route::resource("/type",'TypeController');
+
 Route::resource("/docs",'DocumentController');
 Route::resource("/bills",'BillController');
 Route::resource("/report",'ReportController');
 Route::resource("/wallet",'WalletController');
-Route::resource("admin/profile",'ProfileController');
 
+Route::resource("profile",'ProfileController');
+
+
+//LoginController
+Route::post('login', 'LoginController@login')->name('login');
+Route::get('/logout', 'LoginController@logout')->name('logout');
+
+//AdminProfile
+Route::get('admin','AdminController@index')->name('admin')->middleware('auth');
+Route::get('admin/{profile}','AdminController@showProfile')->name('admin-profile');
+Route::get('admin/{profile}/index','AdminController@showProfile')->name('admin-profile-index');
 
 //PagesController
 Route::get('/pages/about', 'PagesController@about')->name('about');
@@ -60,6 +71,6 @@ Route::get('/pages/gallery', 'PagesController@gallery')->name('gallery');
 Route::get('/pages/service', 'PagesController@service')->name('service');
 Route::get('/pages/terms', 'PagesController@terms')->name('terms');
 
-//PropertyController
-Route::get('/property/property-index', 'PropertiController@property_index')->name('property_index');
-Route::get('/property/property-show', 'PropertiController@property_show')->name('property_show');
+//PropertiController
+Route::get('/properti/property-index', 'PropertiController@property_index')->name('property_index');
+Route::get('/properti/property-show', 'PropertiController@property_show')->name('property_show');
