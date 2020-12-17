@@ -40,7 +40,7 @@
                 <nav>
                     <!-- Menu Toggle btn-->
                     <div class="menu-toggle">
-                        <img class="nav_logo_img img-fluid" src="images/header-logo.png" alt="header-logo.png">
+                        <img class="nav_logo_img img-fluid" src="{{asset('images/header-logo')}}.png" alt="header-logo.png">
                         <button type="button" id="menu-btn">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -48,8 +48,8 @@
                     </button>
                     </div>
                     <a href="#" class="navbar_brand float-left dn-smd">
-                        <img class="logo1 img-fluid" src="images/header-logo.png" alt="header-logo.png">
-                        <img class="logo2 img-fluid" src="images/header-logo2.png" alt="header-logo2.png">
+                        <img class="logo1 img-fluid" src="{{asset('images/header-logo.png')}}" alt="header-logo.png">
+                        <img class="logo2 img-fluid" src="{{asset('images/header-logo2.png')}}" alt="header-logo2.png">
                         <span>FindHouse</span>
                     </a>
                     <!-- Responsive Menu Structure-->
@@ -59,23 +59,21 @@
                             <a href="#"><span class="title">Home</span></a>
                         </li>
                         <li>
-                            <a href="#"><span class="title">Property</span></a>
+                            <a href="{{route('property_index')}}"><span class="title">Property</span></a>
                         </li>
                         <li>
                             <a href="#"><span class="title">Pages</span></a>
                             <ul>
-                                <li><a href="page-about.html">About Us</a></li>
-                                <li><a href="page-gallery.html">Gallery</a></li>
-                                <li><a href="page-faq.html">Faq</a></li>
-                                <li><a href="page-service.html">Service</a></li>
-                                <li><a href="page-terms.html">Terms and Conditions</a></li>
+                                <li><a href="{{route('about')}}">About Us</a></li>
+                                <li><a href="{{route('gallery')}}">Gallery</a></li>
+                                <li><a href="{{route('faq')}}">Faq</a></li>
+                                <li><a href="{{route('service')}}">Service</a></li>
+                                <li><a href="{{route('terms')}}">Terms and Conditions</a></li>
                             </ul>
                         </li>
                         <li class="last">
-                            <a href="page-contact.html"><span class="title">Contact</span></a>
-                        </li>
-
-                        
+                            <a href="{{route('contact')}}"><span class="title">Contact</span></a>
+                        </li>                   
                         <li class="list-inline-item list_s">
                             <a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a>
                         </li>
@@ -111,7 +109,7 @@
                             <div class="row mt25 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="login_thumb">
-                                        <img class="img-fluid w100" src="images/resource/login.jpg" alt="login.jpg">
+                                        <img class="img-fluid w100" src="{{asset('images/resource/login.jpg')}}" alt="login.jpg">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-xl-6">
@@ -155,7 +153,7 @@
                             <div class="row mt25 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="regstr_thumb">
-                                        <img class="img-fluid w100" src="images/resource/regstr.jpg" alt="regstr.jpg">
+                                        <img class="img-fluid w100" src="{{asset('images/resource/regstr.jpg')}}" alt="regstr.jpg">
                                     </div>
                                 </div>
 
@@ -252,7 +250,7 @@
             <div class="mobile-menu">
                 <div class="header stylehome1">
                     <div class="main_logo_home2 text-center">
-                        <img class="nav_logo_img img-fluid mt20" src="images/header-logo2.png" alt="header-logo2.png">
+                        <img class="nav_logo_img img-fluid mt20" src="{{asset('images/header-logo2.png')}}" alt="header-logo2.png">
                         <span class="mt20">FindHouse</span>
                     </div>
                     <ul class="menu_bar_home2">
@@ -266,113 +264,23 @@
                 <ul>
                     <li><span>Home</span>
                         <ul>
-                            <li><a href="index-2.html">Home 1</a></li>
-                            <li><a href="index2.html">Home 2</a></li>
-                            <li><a href="index3.html">Home 3</a></li>
-                            <li><a href="index4.html">Home 4</a></li>
-                            <li><a href="index5.html">Home 5</a></li>
-                            <li><a href="index6.html">Home 6</a></li>
-                            <li><a href="index7.html">Home 7</a></li>
-                            <li><a href="index8.html">Home 8</a></li>
-                            <li><a href="index9.html">Home 9</a></li>
-                            <li><a href="index10.html">Home 10</a></li>
+                            <li><a href="#">Home </a></li>
                         </ul>
                     </li>
-                    <li><span>Listing</span>
+                    <li>
+                        <a href="{{route('property_index')}}"><span class="title">Property</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="title">Pages</span></a>
                         <ul>
-                            <li><span>Listing Grid</span>
-                                <ul>
-                                    <li><a href="page-listing-grid-v1.html">Grid v1</a></li>
-                                    <li><a href="page-listing-grid-v2.html">Grid v2</a></li>
-                                    <li><a href="page-listing-grid-v3.html">Grid v3</a></li>
-                                    <li><a href="page-listing-grid-v4.html">Grid v4</a></li>
-                                    <li><a href="page-listing-grid-v5.html">Grid v5</a></li>
-                                    <li><a href="page-listing-full-width-grid.html">Grid Fullwidth</a></li>
-                                </ul>
-                            </li>
-                            <li><span>Listing Style</span>
-                                <ul>
-                                    <li><a href="page-listing-parallax.html">Parallax Style</a></li>
-                                    <li><a href="page-listing-slider.html">Slider Style</a></li>
-                                    <li><a href="page-listing-map.html">Map Header</a></li>
-                                </ul>
-                            </li>
-                            <li><span>Listing Half</span>
-                                <ul>
-                                    <li><a href="page-listing-half-map-v1.html">Map V1</a></li>
-                                    <li><a href="page-listing-half-map-v2.html">Map V2</a></li>
-                                    <li><a href="page-listing-half-map-v3.html">Map V3</a></li>
-                                    <li><a href="page-listing-half-map-v4.html">Map V4</a></li>
-                                </ul>
-                            </li>
-                            <li><span>Agent View</span>
-                                <ul>
-                                    <li><a href="page-listing-agent-v1.html">Agent V1</a></li>
-                                    <li><a href="page-listing-agent-v2.html">Agent V2</a></li>
-                                    <li><a href="page-listing-agent-v3.html">Agent Details</a></li>
-                                </ul>
-                            </li>
-                            <li><span>Agencies View</span>
-                                <ul>
-                                    <li><a href="page-agencies-list-v1.html">Agencies V1</a></li>
-                                    <li><a href="page-agencies-list-v2.html">Agencies V2</a></li>
-                                    <li><a href="page-agencies-list-v3.html">Agencies Details</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{route('about')}}">About Us</a></li>
+                            <li><a href="{{route('gallery')}}">Gallery</a></li>
+                            <li><a href="{{route('faq')}}">Faq</a></li>
+                            <li><a href="{{route('service')}}">Service</a></li>
+                            <li><a href="{{route('terms')}}">Terms and Conditions</a></li>
                         </ul>
                     </li>
-                    <li><span>Property</span>
-                        <ul>
-                            <li><span>Property</span>
-                                <ul>
-                                    <li><a href="page-dashboard.html">Dashboard</a></li>
-                                    <li><a href="page-my-properties.html">My Properties</a></li>
-                                    <li><a href="page-add-new-property.html">Add New Property</a></li>
-                                </ul>
-                            </li>
-                            <li><span>Listing Single</span>
-                                <ul>
-                                    <li><a href="page-listing-single-v1.html">Single V1</a></li>
-                                    <li><a href="page-listing-single-v2.html">Single V2</a></li>
-                                    <li><a href="page-listing-single-v3.html">Single V3</a></li>
-                                    <li><a href="page-listing-single-v4.html">Single V4</a></li>
-                                    <li><a href="page-listing-single-v5.html">Single V5</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><span>Blog</span>
-                        <ul>
-                            <li><a href="page-blog-v1.html">Blog List 1</a></li>
-                            <li><a href="page-blog-grid.html">Blog List 2</a></li>
-                            <li><a href="page-blog-single.html">Single Post</a></li>
-                        </ul>
-                    </li>
-                    <li><span>Pages</span>
-                        <ul>
-                            <li><span>Shop</span>
-                                <ul>
-                                    <li><a href="page-shop.html">Shop</a></li>
-                                    <li><a href="page-shop-single.html">Shop Single</a></li>
-                                    <li><a href="page-shop-cart.html">Cart</a></li>
-                                    <li><a href="page-shop-checkout.html">Checkout</a></li>
-                                    <li><a href="page-shop-order.html">Order</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-about.html">About Us</a></li>
-                            <li><a href="page-gallery.html">Gallery</a></li>
-                            <li><a href="page-faq.html">Faq</a></li>
-                            <li><a href="page-login.html">LogIn</a></li>
-                            <li><a href="page-compare.html">Membership</a></li>
-                            <li><a href="page-compare2.html">Membership 2</a></li>
-                            <li><a href="page-register.html">Register</a></li>
-                            <li><a href="page-service.html">Service</a></li>
-                            <li><a href="page-error.html">404 Page</a></li>
-                            <li><a href="page-terms.html">Terms and Conditions</a></li>
-                            <li><a href="page-ui-element.html">UI Elements</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="page-contact.html">Contact</a></li>
+                    <li><a href="{{route('contact')}}">Contact</a></li>
                     <li><a href="page-login.html"><span class="flaticon-user"></span> Login</a></li>
                     <li><a href="page-register.html"><span class="flaticon-edit"></span> Register</a></li>
                     <li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="#"><span class="flaticon-plus"></span> Create Listing</a></li>
@@ -474,7 +382,7 @@
         <a class="scrollToHome home7" href="#"><i class="flaticon-arrows"></i></a>
     </div>
     <!-- Wrapper End -->
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="{{asset('../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery-migrate-3.0.0.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
@@ -492,6 +400,8 @@
     <script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/slider.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/timepicker.js')}}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&amp;callback=initMap"type="text/javascript"></script>
+    <script type="text/javascript" src="{{asset('js/googlemaps1.js')}}"></script>
     <!-- Custom script for all pages -->
     <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 </body>
