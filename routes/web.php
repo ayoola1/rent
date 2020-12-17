@@ -35,7 +35,10 @@ Route::resource("/property",'PropertyController');
 Route::resource("/landlord",'LandlordController');
 Route::resource("/tenant",'TenantController');
 Route::resource("/type",'TypeController');
+Route::resource("/docs",'DocumentController');
+Route::resource("/bills",'BillController');
+Route::resource("/report",'ReportController');
+Route::resource("/wallet",'WalletController');
 Route::resource("admin/profile",'ProfileController');
-;
 
 Route::get('admin','AdminController@index')->name('admin');
