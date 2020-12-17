@@ -21,20 +21,36 @@ Route::get('/', function () {
 //     return view('home')->name('home');
 // });
 
-// Route::get('/', 'RegisterController@getRegisterForm')->name('register');
+// Route::get('/dashboard', 'DashBoardController@getdashboard')->name('dashboard');
 
-Route::get('/verify', 'RegisterController@getverify')->name('verify');
 
-Route::get('/dashboard', 'DashBoardController@getdashboard')->name('dashboard');
+
+//Register Controller
 
 Route::post('/register', 'RegisterController@create')->name('register');
 
+//Verify Controller
+Route::get('/verify', 'RegisterController@getverify')->name('verify');
+
 Route::post('/verify', 'RegisterController@verify')->name('verify');
+
+//Admin Landing page Controller
+
+Route::get('admin','AdminController@index')->name('admin');
+
+
+//Resource Controllers
 
 Route::resource("/property",'PropertyController');
 Route::resource("/landlord",'LandlordController');
 Route::resource("/tenant",'TenantController');
 Route::resource("/type",'TypeController');
+
+Route::resource("/docs",'DocumentController');
+Route::resource("/bills",'BillController');
+Route::resource("/report",'ReportController');
+Route::resource("/wallet",'WalletController');
+
 Route::resource("profile",'ProfileController');
 
 
