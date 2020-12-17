@@ -203,7 +203,7 @@
 		            </li> --}}
 	                <li class="user_setting">
 						<div class="dropdown">
-	                		<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="images/team/e1.png" alt="e1.png"> <span class="dn-1199">{{-- {{Auth::user()->name}} --}}</span></a>
+	                		<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="images/team/e1.png" alt="e1.png"> <span class="dn-1199">{{Auth::user()->name}}</span></a>
 						    <div class="dropdown-menu">
 						    	<div class="user_set_header">
 						    		<img class="float-left" src="images/team/e1.png" alt="e1.png">
@@ -365,7 +365,7 @@
 	    	</span></a></li>
 
 	    	<li class="treeview">
-		        <a href="page-my-properties.html"><i class="flaticon-user"></i> <span>Profile</span><i class="fa fa-angle-down pull-right"></i></a>
+		        {{-- <a href="{{route('admin-profile')}}"><i class="flaticon-user"></i> <span>Profile</span><i class="fa fa-angle-down pull-right"></i></a> --}}
 		        <ul class="treeview-menu">
 		        	<li><a href="{{route('profile.index')}}"><i class="fa fa-circle"></i>View Profile</a></li>
 		        	<li><a href="#"><i class="fa fa-circle"></i>Change Password</a></li>
@@ -454,7 +454,7 @@
 
 
 		    
-		    <li><a href="page-login.html"><i class="flaticon-logout"></i> <span>Logout</span></a></li>
+		    <li><a href="{{route('logout')}}"><i class="flaticon-logout"></i> <span>Logout</span></a></li>
 	    </ul>
     </div>
 
