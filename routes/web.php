@@ -36,7 +36,7 @@ Route::resource("/landlord",'LandlordController');
 Route::resource("/tenant",'TenantController');
 Route::resource("/type",'TypeController');
 Route::resource("profile",'ProfileController');
-;
+
 
 //LoginController
 Route::post('login', 'LoginController@login')->name('login');
@@ -44,7 +44,8 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 
 //AdminProfile
 Route::get('admin','AdminController@index')->name('admin')->middleware('auth');
-// Route::get('admin/{profile}','AdminController@showProfile')->name('admin-profile');
+Route::get('admin/{profile}','AdminController@showProfile')->name('admin-profile');
+Route::get('admin/{profile}/index','AdminController@showProfile')->name('admin-profile-index');
 
 //PagesController
 Route::get('/pages/about', 'PagesController@about')->name('about');
