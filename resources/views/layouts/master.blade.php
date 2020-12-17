@@ -166,7 +166,7 @@
                                         <form method="POST" action="{{ route('register') }}">
                                            @csrf
                                             <div class="form-group input-group">
-                                                <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" id="exampleInputName" placeholder="Name">
+                                                <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" id="exampleInputName" placeholder="Name" required>
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="flaticon-user"></i></div>
                                                 </div>
@@ -179,7 +179,7 @@
                                             </div>
 
                                             <div class="form-group input-group">
-                                                <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" id="exampleInputEmail2" placeholder="Email">
+                                                <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" id="exampleInputEmail2" placeholder="Email" required="">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="fa fa-envelope-o"></i></div>
                                                 </div>
@@ -191,7 +191,7 @@
                                             </div>
 
                                             <div class="form-group input-group">
-                                                <input type="text" class="form-control {{ $errors->has('phone_number') ? ' is-invalid' : '' }}" name="phone_number" id="exampleInputPassword2" placeholder="Phone number">
+                                                <input type="text" class="form-control {{ $errors->has('phone_number') ? ' is-invalid' : '' }}" name="phone_number" id="exampleInputPassword2" placeholder="Phone number" required="">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="flaticon-password"></i></div>
                                                 </div>
@@ -205,7 +205,7 @@
 
 
                                             <div class="form-group input-group">
-                                                <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" id="exampleInputPassword2" placeholder="Password" name="password">
+                                                <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" id="exampleInputPassword2" placeholder="Password" name="password" required="">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="flaticon-password"></i></div>
                                                 </div>
