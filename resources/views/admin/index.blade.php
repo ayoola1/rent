@@ -64,8 +64,8 @@
 							<div class="ff_one style4">
 								<div class="icon"><span class="flaticon-heart"></span></div>
 								<div class="detais">
-									<div class="timer">18</div>
-									<p>Total Favorites</p>
+									<div class="timer">{{count($users)}}</div>
+									<p>Total Members</p>
 								</div>
 							</div>
 						</div>

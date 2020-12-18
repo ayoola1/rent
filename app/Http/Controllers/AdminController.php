@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Tenant;
+use App\Landlord;
 
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function index(){
-    	return view('admin.index');
+        $users = User::all();
+        $tenants = Tenant::all();
+        $landlords = Landlord::all();
+        return view('admin.index')->with('users',$users)
+                                ->with('tenants',$tenants)
+                                ->with('landlords',$landlords);
     }
 
     public function showProfile($id)
@@ -17,6 +24,6 @@ class AdminController extends Controller
         return view('admin.profile.index')->with('users',$users);
     }
 
-    
+
 
 }

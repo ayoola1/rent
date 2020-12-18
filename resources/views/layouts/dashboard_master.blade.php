@@ -56,7 +56,8 @@
 		        <!-- Responsive Menu Structure-->
 		        <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
 		        <ul id="respMenu" class="ace-responsive-menu text-right" data-menu-style="horizontal">
-		            <li>
+                    <li style="float: left">{{Auth::user()->role->name}}</li>
+		            {{-- <li>
 		                <a href="#"><span class="title">Home</span></a>
 		            </li>
 		            <li>
@@ -74,7 +75,7 @@
 		            </li>
 		            <li class="last">
 		                <a href="page-contact.html"><span class="title">Contact</span></a>
-		            </li>
+		            </li> --}}
 	                <li class="user_setting">
 						<div class="dropdown">
 	                		<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="images/team/e1.png" alt="e1.png"> <span class="dn-1199">{{Auth::user()->name}}</span></a>
@@ -92,8 +93,10 @@
 						    	</div>
 						    </div>
 						</div>
-			        </li>
-	                <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
+                    </li>
+                    @can('isLandlord')
+	                    <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
+                    @endcan
 		        </ul>
 		    </nav>
 		</div>
@@ -148,10 +151,10 @@
 		        <ul class="treeview-menu">
 		        	<li><a href="admin/{{Auth::user()->id}}/index"><i class="fa fa-circle"></i>View Profile</a></li>
 		        	<li><a href="#"><i class="fa fa-circle"></i>Change Password</a></li>
-		        	
+
 		        </ul>
 	      	</li>
-
+			@can('isAdmin')
 	    	<li class="treeview">
 		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Landlord</span><i class="fa fa-angle-down pull-right"></i></a>
 		        <ul class="treeview-menu">
@@ -160,6 +163,7 @@
 		        	<li><a href="#"><i class="fa fa-circle"></i> Editors</a></li>
 		        </ul>
 	      	</li>
+			@endcan
 
 	      	<li class="treeview">
 		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Tenant</span><i class="fa fa-angle-down pull-right"></i></a>
@@ -200,14 +204,14 @@
 		        	<li><a href="#"><i class="fa fa-circle"></i>Wallet Transaction</a></li>
 		        </ul>
 	      	</li>
-	      	
-             
+
+
              <li class="treeview">
 		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Contract Document</span><i class="fa fa-angle-down pull-right"></i></a>
 		        <ul class="treeview-menu">
 		        	<li><a href="#"><i class="fa fa-circle"></i>View Contract</a></li>
 		        	<li><a href="#"><i class="fa fa-circle"></i>Contract Type</a></li>
-		        	
+
 		        </ul>
 	      	</li>
 
@@ -217,22 +221,20 @@
 		        	<li><a href="#"><i class="fa fa-circle"></i>Bill Payment  Report</a></li>
 		        	<li><a href="#"><i class="fa fa-circle"></i>Wallet Cash Flow</a></li>
 		            <li><a href="#"><i class="fa fa-circle"></i>Property Report</a></li>
-		        	
+
 		        </ul>
 	      	</li>
-
+			@can('isTenant')
 	      	<li class="treeview">
 		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Loan</span><i class="fa fa-angle-down pull-right"></i></a>
 		        <ul class="treeview-menu">
 		        	<li><a href="#"><i class="fa fa-circle"></i>Loan Offers</a></li>
 		        	<li><a href="#"><i class="fa fa-circle"></i>Applied Loans</a></li>
 		            <li><a href="#"><i class="fa fa-circle"></i>Loan Payment Report</a></li>
-		        	
+
 		        </ul>
 	      	</li>
-
-
-		    
+			@endcan
 		    <li><a href="{{route('logout')}}"><i class="flaticon-logout"></i> <span>Logout</span></a></li>
 	    </ul>
     </div>
@@ -267,7 +269,7 @@
 <script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/smartuploader.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/dashboard-script.js')}}"></script>
-<!-- Custom script for all pages --> 
+<!-- Custom script for all pages -->
 <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 </body>
 
