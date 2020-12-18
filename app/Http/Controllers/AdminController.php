@@ -13,8 +13,8 @@ class AdminController extends Controller
 
     public function showProfile($id)
     {
-        $users = Users::findorFail($id);
-        return view('admin.profile')->with('users',$users);
+        $users = User::Find($id);
+        return view('admin.profile.index')->with('users',$users);
     }
 
     

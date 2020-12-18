@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.pages')
 
 @section('content')
     <!-- Inner Page Breadcrumb -->
