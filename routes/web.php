@@ -46,6 +46,8 @@ Route::resource("/landlord",'LandlordController');
 Route::resource("/tenant",'TenantController');
 Route::resource("/type",'TypeController');
 
+
+
 Route::resource("/docs",'DocumentController');
 Route::resource("/bills",'BillController');
 Route::resource("/report",'ReportController');
@@ -60,8 +62,13 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 
 //AdminProfile
 Route::get('admin','AdminController@index')->name('admin')->middleware('auth');
+
+// Route::get('admin/{profile}','AdminController@showProfile')->name('admin-profile');
+
+
 Route::get('admin/{profile}','AdminController@showProfile')->name('admin-profile');
 Route::get('admin/{profile}/index','AdminController@showProfile')->name('admin-profile-index');
+
 
 //PagesController
 Route::get('/pages/about', 'PagesController@about')->name('about');

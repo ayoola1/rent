@@ -202,6 +202,7 @@
                                             </div>
 
                                             <div class="form-group input-group">
+                                                
                                                 <input type="text" class="form-control {{ $errors->has('phone_number') ? ' is-invalid' : '' }}" name="phone_number" id="exampleInputPassword2" placeholder="Phone number" required="">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="flaticon-password"></i></div>
