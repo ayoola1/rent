@@ -8972,6 +8972,7 @@ a.btn.btn_error{
 .sign_up_form.inner_page,
 .login_form.inner_page {
   padding: 0 80px 0;
+  margin-bottom: 80px!important;
 }
 .login_form.inner_page .heading h4{
   font-size: 25px;
@@ -12148,6 +12149,14 @@ a.btn.btn_error{
   color: #484848;
   line-height: 1.2;
 }
+
+.ff_one .detais .timer1{
+  font-size: 36px;
+  font-family: "Nunito";
+  color: #484848;
+  line-height: 1.2;
+}
+
 .ff_one .detais p{
   font-size: 16px;
   font-family: "Nunito";

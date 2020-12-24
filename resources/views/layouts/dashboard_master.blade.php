@@ -56,11 +56,11 @@
 		        <!-- Responsive Menu Structure-->
 		        <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
 		        <ul id="respMenu" class="ace-responsive-menu text-right" data-menu-style="horizontal">
-                    <li style="float: left">{{Auth::user()->role->name}}</li>
-		            {{-- <li>
-		                <a href="#"><span class="title">Home</span></a>
-		            </li>
+                   {{--  <li style="float: left;">{{Auth::user()->role->name}}</li> --}}
 		            <li>
+		                <a href="#" style="position: relative; left: -700px">Welcome to<span style="font-weight: bold" class="title"> {{Auth::user()->role->name}}</span>&nbsp;Dashboard</a>
+		            </li>
+		            {{-- <li>
 		                <a href="#"><span class="title">Property</span></a>
 		            </li>
 		            <li>
@@ -94,9 +94,9 @@
 						    </div>
 						</div>
                     </li>
-                    @can('isLandlord')
+                    {{-- @can('isLandlord')
 	                    <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
-                    @endcan
+                    @endcan --}}
 		        </ul>
 		    </nav>
 		</div>
@@ -143,18 +143,19 @@
 	    <ul class="sidebar-menu">
 	   		<li class="header"><img src="images/header-logo2.png" alt="header-logo2.png"> FindHouse</li>
 	   		<li class="title"><span>Main</span></li>
-	    	<li class="treeview"><a href="{{route('admin')}}"><i class="flaticon-layers"></i><span> Dashboard
+	    	<li class="treeview"><a href="#{{-- {{route('admin')}} --}}"><i class="flaticon-layers"></i><span> Dashboard
 	    	</span></a></li>
-
+            
 	    	<li class="treeview">
-		        <a href="admin/{{Auth::user()->id}}"><i class="flaticon-user"></i> <span>Profile</span><i class="fa fa-angle-down pull-right"></i></a>
+		        <a href="#"><i class="flaticon-user"></i> <span>Profile</span><i class="fa fa-angle-down pull-right"></i></a>
 		        <ul class="treeview-menu">
-		        	<li><a href="admin/{{Auth::user()->id}}/index"><i class="fa fa-circle"></i>View Profile</a></li>
+		        	<li><a href=""><i class="fa fa-circle"></i>View Profile</a></li>
 		        	<li><a href="#"><i class="fa fa-circle"></i>Change Password</a></li>
 
 		        </ul>
 	      	</li>
-			@can('isAdmin')
+	      
+			{{-- @can('isAdmin')
 	    	<li class="treeview">
 		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Landlord</span><i class="fa fa-angle-down pull-right"></i></a>
 		        <ul class="treeview-menu">
@@ -163,7 +164,18 @@
 		        	<li><a href="#"><i class="fa fa-circle"></i> Editors</a></li>
 		        </ul>
 	      	</li>
-			@endcan
+			@endcan --}}
+
+          
+	    	<li class="treeview">
+		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Landlord</span><i class="fa fa-angle-down pull-right"></i></a>
+		        <ul class="treeview-menu">
+		        	<li><a href="#"><i class="fa fa-circle"></i>View Landlords</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i> Advanced Elements</a></li>
+		        	<li><a href="#"><i class="fa fa-circle"></i> Editors</a></li>
+		        </ul>
+	      	</li>
+			
 
 	      	<li class="treeview">
 		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Tenant</span><i class="fa fa-angle-down pull-right"></i></a>
@@ -195,6 +207,7 @@
 	      	</li>
 
 	   		{{-- <li class="title"><span>Manage Listings</span></li> --}}
+
 	      	<li class="treeview">
 		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Wallet Account</span><i class="fa fa-angle-down pull-right"></i></a>
 		        <ul class="treeview-menu">
@@ -224,7 +237,8 @@
 
 		        </ul>
 	      	</li>
-			@can('isTenant')
+			@if(Auth::user()->role->name === 'admin' || Auth::user()->role->name === 'tenant')
+
 	      	<li class="treeview">
 		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Loan</span><i class="fa fa-angle-down pull-right"></i></a>
 		        <ul class="treeview-menu">
@@ -234,7 +248,9 @@
 
 		        </ul>
 	      	</li>
-			@endcan
+
+	      	@endif
+		
 		    <li><a href="{{route('logout')}}"><i class="flaticon-logout"></i> <span>Logout</span></a></li>
 	    </ul>
     </div>

@@ -21,7 +21,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        // return view('admin.profile.index');
+        return view('profile.index');
     }
 
     /**
@@ -53,9 +53,8 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-
-        return view('admin.profile.index',compact('user'));
+        $user = User::findOrFail($id);
+        return view('profile.show',compact('user'));
     }
 
     /**
@@ -93,11 +92,29 @@ class ProfileController extends Controller
         }
 
 
+       if($file = $request->file('photo')){
+
+        // if(file_exists(public_path(). '/photos/'.$user->photo)){
+
+        //     unlink(public_path() . '/photos/'.$user->photo);
+
+        // }
+       
+          $name = time() . $file->getClientOriginalName();
+
+          $file->move('photos',$name);
+
+
+          $input['photo'] = $name;
+    }
+
+        
+
         $user->update($input);
 
-        Session::flash('the_user','Profile has beeen Updated!');
+        Session::flash('the_success','Profile has beeen Updated!');
 
-        return redirect()->route('profile.index');
+        return redirect()->back();
 
     }
 

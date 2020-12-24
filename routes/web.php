@@ -21,53 +21,70 @@ Route::get('/', function () {
 //     return view('home')->name('home');
 // });
 
-// Route::get('/dashboard', 'DashBoardController@getdashboard')->name('dashboard');
+Route::get('/dashboard', 'DashBoardController@getdashboard')->name('dashboard');
 
+// Route::get('/dashboard/profile/{profile}', 'DashBoardController@dashboardProfile')->name('profile');
 
 
 //Register Controller
-
+Route::get('/register', 'RegisterController@registrationform')->name('register');
 Route::post('/register', 'RegisterController@create')->name('register');
+
+//LoginController
+
+Route::get('/login', 'LoginController@loginform')->name('login');
+Route::post('/login', 'LoginController@login')->name('login');
+Route::get('/logout', 'LoginController@logout')->name('logout');
 
 //Verify Controller
 Route::get('/verify', 'RegisterController@getverify')->name('verify');
 
 Route::post('/verify', 'RegisterController@verify')->name('verify');
 
-//Admin Landing page Controller
+// SpecialControllers
 
-Route::get('admin','AdminController@index')->name('admin');
+Route::get('dashboard/admin','AdminController@index')->name('admin')->middleware('admin');
+Route::get('dashboard/land','LandlordController@allLandlord')->name('land');
+Route::get('dashboard/land/{land}','LandlordController@allLand')->name('allland');
+Route::get('dashboard/tent','TenantController@allTenant')->name('tent');
+Route::get('dashboard/tent/{tent}','TenantController@alltent')->name('alltent');
+Route::get('dashboard/property/mortgage','PropertyController@allProperty')->name('mortgage');
+Route::put('dashboard/prop/{proper}','PropertyController@Active')->name('active');
+Route::put('dashboard/prop/{prop}','PropertyController@notActive')->name('notactive');
+Route::get('dashboard/prop/{prop}/edit','PropertyController@renantedit')->name('renantedit');
+// Route::post('dashboard/property/{prop}', 'PropertyController@Active')->name('the_active');
+// Route::post('dashboard/property/{prop}', 'PropertyController@notActive')->name('notactive');
+
 
 
 //Resource Controllers
 
-Route::resource("/property",'PropertyController');
-Route::resource("/landlord",'LandlordController');
-Route::resource("/tenant",'TenantController');
-Route::resource("/type",'TypeController');
+Route::resource("dashboard/profile",'ProfileController');
+Route::resource("dashboard/property",'PropertyController');
+Route::resource("dashboard/landlord",'LandlordController')->middleware('landlord');
+Route::resource("dashboard/tenant",'TenantController')->middleware('tenant');
+Route::resource("dashboard/type",'TypeController');
+Route::resource("dashboard/document",'DocumentController');
+
+
+Route::resource("dashboard/docs",'DocumentController');
+Route::resource("dashboard/bills",'BillController');
+Route::resource("dashboard/report",'ReportController');
+Route::resource("dashboard/wallet",'WalletController');
+
+// Route::resource("/dashboard/profile",'ProfileController');
 
 
 
-Route::resource("/docs",'DocumentController');
-Route::resource("/bills",'BillController');
-Route::resource("/report",'ReportController');
-Route::resource("/wallet",'WalletController');
-
-Route::resource("profile",'ProfileController');
-
-
-//LoginController
-Route::post('login', 'LoginController@login')->name('login');
-Route::get('/logout', 'LoginController@logout')->name('logout');
 
 //AdminProfile
-Route::get('admin','AdminController@index')->name('admin')->middleware('auth');
+// Route::get('/admin','AdminController@index')->name('admin')->middleware('auth');
 
 // Route::get('admin/{profile}','AdminController@showProfile')->name('admin-profile');
 
 
-Route::get('admin/{profile}','AdminController@showProfile')->name('admin-profile');
-Route::get('admin/{profile}/index','AdminController@showProfile')->name('admin-profile-index');
+// Route::get('admin/{profile}','AdminController@showProfile')->name('admin-profile');
+// Route::get('admin/{profile}/index','AdminController@showProfile')->name('admin-profile-index');
 
 
 //PagesController

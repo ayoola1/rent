@@ -16,11 +16,15 @@ class CreateDocumentsTable extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('supporting_doc');
-            $table->string('guarantor');
-            $table->string('mortgage_contract')->nullable();
-            $table->string('rent_contract')->nullable();
+            $table->string('file');
             $table->timestamps();
+            // $table->id();
+            // $table->integer('user_id');
+            // $table->string('supporting_doc');
+            // $table->string('guarantor');
+            // $table->string('mortgage_contract')->nullable();
+            // $table->string('rent_contract')->nullable();
+            // $table->timestamps();
         });
     }
 

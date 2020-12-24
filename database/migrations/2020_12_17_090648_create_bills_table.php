@@ -17,8 +17,8 @@ class CreateBillsTable extends Migration
             $table->id();
             $table->integer('tenant_id');
             $table->integer('property_id');
-            $table->string('property')->nullable();
-            $table->string('amount')->nullable();
+            // $table->string('property')->nullable();
+            // $table->string('amount')->nullable();
             $table->string('bill_document')->nullable();
             $table->timestamps();
         });

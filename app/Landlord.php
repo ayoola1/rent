@@ -28,4 +28,6 @@ class Landlord extends Model
 
     	return $this->belongsTo('App\Role');
     }
+
+    
 }

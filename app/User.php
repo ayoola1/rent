@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password', 'phone_number', 'isVerified','email_verified_at',
-        'role_id','is_active'
+        'role_id','is_active','photo','last'
     ];
 
     /**
@@ -44,9 +44,56 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role');
     }
 
+     public function tenant(){
+
+        return $this->belongsTo('App\Tenant');
+    }
+
+
 
     public function documents(){
 
         return $this->hasMany('App\Document');
     }
+
+    
+    public function isAdmin(){
+
+      if($this->role->name === 'admin'){
+
+        return true;
+      }
+      else{
+
+        return false;
+      }
+
+    }
+
+    public function isLandlord(){
+
+      if($this->role->name === 'landlord'){
+
+        return true;
+      }  
+      else{
+
+        return false;
+      }
+
+    }
+
+    public function isTenant(){
+
+      if($this->role->name === 'tenant'){
+
+        return true;
+      }  
+      else{
+
+        return false;
+      }
+
+    }
+
 }

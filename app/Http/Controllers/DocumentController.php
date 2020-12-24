@@ -17,9 +17,8 @@ class DocumentController extends Controller
      */
     public function index()
     {
-         $documents  = Document::all();
-
-         return view('');
+       
+         
     }
 
     /**
@@ -29,7 +28,7 @@ class DocumentController extends Controller
      */
     public function create()
     {
-        //
+        return view('document.create');
     }
 
     /**
@@ -40,7 +39,23 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            
+            $input = $request->all();
+
+            if($file = $request->file('file')){
+
+               $name = time() . $file->getClientOriginalName();
+
+               $file->move('document_images',$name);
+
+               $input['file'] = $name;
+            }
+
+             Document::create($input);
+        
+             Session::flash('the_success','Your Images has been uploaded!');
+
+             return redirect()->back;
     }
 
     /**

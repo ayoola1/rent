@@ -21,9 +21,16 @@ class TenantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    //   public function __construct(){
+
+    //     $this->middleware('tenant');
+    // }
+
+
     public function index()
     {
-        return view('admin.tenant.index');
+        return view('tenant');
     }
 
     /**
@@ -107,5 +114,21 @@ class TenantController extends Controller
         Session::flash('the_user','Tenant has been deleted');
 
         return redirect()->route('tenant.index');
+    }
+
+    public function allTenant(){
+
+        $tenants = Tenant::all();
+
+        return view('tenant.the_tenant',compact('tenants'));
+    }
+
+      public function alltent($id){
+
+        // $land = Auth::user();
+        $tent = Tenant::findOrFail($id);
+        $properties = Property::all();
+
+        return view('tenant.show',compact('properties','tent'));
     }
 }

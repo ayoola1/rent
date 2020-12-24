@@ -75,10 +75,14 @@
                             <a href="{{route('contact')}}"><span class="title">Contact</span></a>
                         </li>                   
                         <li class="list-inline-item list_s">
-                            <a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a>
+                            <a href="{{route('login')}}"> <span class="dn-lg">Login</span></a>
                         </li>
 
-                        <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
+                         <li class="list-inline-item list_s">
+                            <a href="{{route('register')}}"> <span class="dn-lg">Register</span></a>
+                        </li>
+
+                        {{-- <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li> --}}
                     </ul>
                 </nav>
             </div>
@@ -112,7 +116,7 @@
                                         <img class="img-fluid w100" src="{{asset('images/resource/login.jpg')}}" alt="login.jpg">
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-xl-6">
+                                {{-- <div class="col-lg-6 col-xl-6">
                                     <div class="login_form">
                                         <form action="{{route('login')}}" method="POST">
                                             @csrf
@@ -159,7 +163,7 @@
                                             <p class="text-center">Don't have an account? <a class="text-thm" href="#">Register</a></p>
                                         </form>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="row mt25 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="col-lg-6 col-xl-6">
@@ -169,7 +173,7 @@
                                 </div>
 
 
-                                <div class="col-lg-6 col-xl-6">
+                               {{--  <div class="col-lg-6 col-xl-6">
                                     <div class="sign_up_form">
                                         <div class="heading">
                                             <h4>Register</h4>
@@ -234,22 +238,12 @@
                                                     <div class="input-group-text"><i class="flaticon-password"></i></div>
                                                 </div>
                                             </div>
-                                            {{-- <div class="form-group ui_kit_select_search mb0">
-                                                <select class="selectpicker" data-live-search="true" data-width="100%">
-                                                <option data-tokens="SelectRole">Single User</option>
-                                                <option data-tokens="Agent/Agency">Agent</option>
-                                                <option data-tokens="SingleUser">Multi User</option>
-                                            </select>
-                                            </div> --}}
-                                            {{-- <div class="form-group custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="exampleCheck2">
-                                                <label class="custom-control-label" for="exampleCheck2">I have read and accept the Terms and Privacy Policy?</label>
-                                            </div> --}}
+                                          
                                             <button type="submit"  class="btn btn-log btn-block btn-thm">Sign Up</button>
                                             <p class="text-center">Already have an account? <a class="text-thm" href="#">Log In</a></p>
                                         </form>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -293,9 +287,9 @@
                         </ul>
                     </li>
                     <li><a href="{{route('contact')}}">Contact</a></li>
-                    <li><a href="page-login.html"><span class="flaticon-user"></span> Login</a></li>
-                    <li><a href="page-register.html"><span class="flaticon-edit"></span> Register</a></li>
-                    <li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="#"><span class="flaticon-plus"></span> Create Listing</a></li>
+                    <li><a href="{{route('login')}}"><span class="flaticon-user"></span> Login</a></li>
+                    <li><a href="{{route('register')}}"><span class="flaticon-edit"></span> Register</a></li>
+                    {{-- <li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="#"><span class="flaticon-plus"></span> Create Listing</a></li> --}}
                 </ul>
             </nav>
         </div>      

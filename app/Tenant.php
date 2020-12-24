@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tenant extends Model
 {
-    protected $fillable = ['address','gender','role_id','user_id','landlord_id','property_id'];
+    protected $guarded = [];
 
     public function user(){
 

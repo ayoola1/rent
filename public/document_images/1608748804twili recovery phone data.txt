@@ -1,0 +1,20 @@
+Phone recovery
+HCI0k6RrYslDq7HjFgUyO3KCmnCicqN97mmBw1zS
+
+ACCOUNT SID
+AC87a04132ff4cf96acc9c073b86249baf
+
+AUTH TOKEN
+
+6dda5e2911e535676a303a020b0fe7cb
+
+
+service id
+sam
+VAd656b09eefadb52ba7f530479b5c67de
+
+own
+VA0c704446642a9b1dac69f7098e0362da
+
+to create a project in laravel
+composer create-project --prefer-dist laravel/laravel blog "5.7.*"

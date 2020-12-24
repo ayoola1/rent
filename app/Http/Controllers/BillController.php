@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\Session;
+
 use App\Tenant;
 
 use App\Property;
+
+use App\User;
 
 class BillController extends Controller
 {
@@ -27,7 +33,14 @@ class BillController extends Controller
      */
     public function create()
     {
-        //
+       $user = Auth::user();
+
+       $the_user = $user->id;
+
+       $properties = Property::where('landlord_id',$the_user)->get();
+       
+        
+       return view('bill.create',compact('user','properties'));
     }
 
     /**

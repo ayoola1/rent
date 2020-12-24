@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Session;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\Tenant;
 
 use App\User;
@@ -18,14 +20,22 @@ use App\Property;
 
 class LandlordController extends Controller
 {
+
+    //   public function __construct(){
+
+    //     $this->middleware('landlord');
+    // }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-      
+    {  
+       $tenants = Tenant::all();
+       $properties = Property::all();
+       return view('landlord',compact('tenants','properties'));
     }
 
     /**
@@ -57,9 +67,10 @@ class LandlordController extends Controller
      */
     public function show($id)
     {
-        $landlord = Landlord::findOrFail($id);
+        // $land = Auth::user();
+        // $properties = Property::all();
 
-        return view();
+        // return view('landlord.show',compact('properties','land'));
          
     }
 
@@ -109,5 +120,21 @@ class LandlordController extends Controller
         Session::flash('the_user','Landlord has been updated!');
 
         return redirect()->route('');
+    }
+
+    public function allLandlord(){
+
+        $landlords = Landlord::all();
+
+        return view('landlord.the_landlord',compact('landlords'));
+    }
+
+     public function allLand($id){
+
+        // $land = Auth::user();
+        $land = Landlord::findOrFail($id);
+        $properties = Property::all();
+
+        return view('landlord.show',compact('properties','land'));
     }
 }

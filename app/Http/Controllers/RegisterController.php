@@ -16,10 +16,10 @@ use App\User;
 
 class RegisterController extends Controller
 {
-    // public function getRegisterForm(){
+    public function registrationform(){
 
-    //     return view('welcome');
-    // }
+        return view('auth.register');
+    }
 
     public function getverify(){
 
@@ -72,7 +72,7 @@ class RegisterController extends Controller
             $user = tap(User::where('phone_number', $data['phone_number']))->update(['isVerified' => true]);
             /* Authenticate user */
             Auth::login($user->first());
-            return redirect()->route('admin')->with(['message' => 'Phone number verified']);
+            return redirect()->route('dashboard')->with(['message' => 'Phone number verified']);
         }
         return back()->with(['phone_number' => $data['phone_number'], 'error' => 'Invalid verification code entered!']);
     }

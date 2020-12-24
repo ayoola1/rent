@@ -15,14 +15,17 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->integer('tenant_id');
+            $table->integer('tenant_id')->nullable();
             $table->integer('type_id');
+            $table->integer('landlord_id');
             $table->string('name');
-            $table->float('price',8,2)->nullable();
+            // $table->float('price',8,2)->nullable();
+            $table->integer('price')->nullable();
             $table->string('image');
             $table->string('address');
             $table->integer('bed');
             $table->integer('bath');
+            $table->integer('status');
             $table->timestamps();
         });
     }

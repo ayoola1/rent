@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\Session;
+
 use App\Tenant;
 
 use App\User;
 
-use App\Role;
+use App\Type;
 
 use App\Landlord;
 
@@ -23,7 +27,9 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+        $properties = Property::all();
+
+        return view('property.index',compact('properties'));
     }
 
     /**
@@ -32,8 +38,16 @@ class PropertyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        // $types = Type::pluck('name','id')->all();
+        $types = Type::all();
+        $user = Auth::user();
+
+        $the_id = $user->id;
+
+        $the_pro = Property::where('user_id','=',$the_id)->get();
+        
+        return view('property.create',compact('types','user','the_pro'));
     }
 
     /**
@@ -44,7 +58,43 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $this->validate($request,[
+          
+          'name' => 'required',
+          'price'=>'required',
+          'bed'  => 'required',
+          'bath' => 'required',
+          'kitchen'=>'required',
+          'address' => 'required',
+          'type_id' => 'required',
+          'image'=> 'required',
+           // 'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+          'utilities'=>'required'
+
+
+        ]);
+
+        $input = $request->all();
+
+        if($file = $request->file('image')){
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('property_images',$name);
+
+            $input['image'] = $name;
+            
+        }
+         
+        $input['utilities'] = $request->input('utilities');
+
+        Property::create($input);
+
+        Session::flash('the_success','Property has been created');
+
+        return redirect()->route('property.index');
     }
 
     /**
@@ -57,7 +107,9 @@ class PropertyController extends Controller
     {
        $property = Property::findOrFail($id);
 
-       return view('');
+       // return $property;
+
+       return view('property.show',compact('property'));
     }
 
     /**
@@ -68,7 +120,11 @@ class PropertyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $property = Property::findOrFail($id);
+        $tenant = Tenant::all();
+
+
+        return view('property.edit',compact('property','tenant'));
     }
 
     /**
@@ -97,6 +153,67 @@ class PropertyController extends Controller
 
         Session::flash('the_user','Landlord has been updated!');
 
-        return redirect()->route('');
+        return redirect()->route('property.create');
     }
+
+
+    public function allProperty()
+    {
+        $properties = Property::all();
+
+        return view('property.mortgage',compact('properties'));
+    }
+
+
+     public function Active(Request $request,$id){
+
+        $prop = Property::findOrFail($id);
+
+        $input = $request->all();
+
+        $prop->update($input);
+
+        Session::flash('the_success','Status is Active!');
+
+        return redirect()->route('property.index');
+    }
+
+    public function notActive(Request $request,$id){
+
+        $prop = Property::findOrFail($id);
+
+        $input = $request->all();
+
+        $prop->update($input);
+
+        Session::flash('the_succ','Status is not Active!');
+
+        return redirect()->route('property.index');
+    }
+
+
+    // public function getlandId($id){
+        
+
+    //     $types = Type::all();
+    //     $user = Auth::user();
+
+    //     $the_id = $user->id;
+
+    //     $the_landlord = Landlord::where('user_id','=',$the_id)->get();
+
+    //     return view('landlordproperty');
+    // }
+
+
+    public function renantedit($id)
+    {
+        $property = Property::findOrFail($id);
+
+        return view('property.edit',compact('property'));
+    }
+
+
+
+
 }

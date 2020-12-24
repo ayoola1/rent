@@ -12,14 +12,28 @@
 @endif
 
 
-@if(Session::has('the_user'))
+@if(Session::has('the_success'))
 
   <div class="alert alert-success  alert-dismissable">
        
        <button type="button" class="close" data-dismiss="alert">&times;</button>
 
-       <p>{{session('the_user')}}</p>
+       <p>{{session('the_success')}}</p>
 
   </div>
 
 @endif
+
+
+@if(Session::has('the_succ'))
+
+  <div class="alert alert-success  alert-dismissable">
+       
+       <button type="button" class="close" data-dismiss="alert">&times;</button>
+
+       <p>{{session('the_succ')}}</p>
+
+  </div>
+
+@endif
+
