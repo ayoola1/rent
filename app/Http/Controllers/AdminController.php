@@ -5,6 +5,7 @@ use App\User;
 use App\Tenant;
 use App\Landlord;
 use App\Property;
+use App\Note;
 
 use Illuminate\Http\Request;
 
@@ -21,10 +22,12 @@ class AdminController extends Controller
         $tenants = Tenant::all();
         $landlords = Landlord::all();
         $properties = Property::all();
+        $notes = Note::all();
         return view('admin')->with('users',$users)
                                 ->with('tenants',$tenants)
                                 ->with('landlords',$landlords)
-                                ->with('properties',$properties);
+                                ->with('properties',$properties)
+                                ->with('notes',$notes);
     }
 
 

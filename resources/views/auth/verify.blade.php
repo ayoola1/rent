@@ -1,221 +1,164 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Estate sale - Real Estate Category Bootstrap Responsive Website Template - Home : W3layouts</title>
 
-<!-- Mirrored from grandetest.com/theme/findhouse-html/page-contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Dec 2020 14:26:01 GMT -->
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="advanced search custom, agency, agent, business, clean, corporate, directory, google maps, homes, listing, membership packages, property, real estate, real estate agent, realestate agency, realtor">
-<meta name="description" content="FindHouse - Real Estate HTML Template">
-<meta name="CreativeLayers" content="ATFN">
-<!-- css file -->
-<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <!-- Responsive stylesheet -->
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-    <!-- Title -->
-    <title>FindHouse - Real Estate HTML Template</title>
-    <!-- Favicon -->
-    <link href="{{asset('images/favicon.ico')}}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
-    <link href="{{asset('images/favicon.ico')}}" sizes="128x128" rel="shortcut icon" />
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+  </head>
+  <body>
+<header id="site-header" class="fixed-top">
+  <div class="container">
+      <nav class="navbar navbar-expand-lg stroke px-0">
+          <h1> <a class="navbar-brand" href="index.html">
+                  <span class="fa fa-home"></span>&nbsp; <span style="color:#000">Rent</span><span style="color: #f93;">ga</span><span style="color: #000;">ge</span>
+              </a></h1>
+          <!-- if logo is image enable this   
+  <a class="navbar-brand" href="#index.html">
+      <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+  </a> -->
+          <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+              data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+              <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav ml-lg-5 mr-auto">
+
+                
+
+                  <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item @@listing__active">
+                      <a class="nav-link" href="listing.html">About</a>
+                  </li>
+                  <li class="nav-item @@listing__active">
+                      <a class="nav-link" href="listing.html">Property on mortgage</a>
+                  </li>
+                  <li class="nav-item @@listing__active">
+                      <a class="nav-link" href="listing.html">Property for rent</a>
+                  </li>
+              </ul>
+              <div class="top-quote mt-lg-0">
+                <ul class="navbar-nav ml-lg-5 mr-auto">
+
+                  @if(Route::has('login'))
+
+                  <li class="nav-item">
+
+                      @auth
+
+                      <a class="nav-link" href="{{ url('/home') }}">Home <i class="fa fa-sign-in" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
+                  </li>
+
+                      @else
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ route('login') }}">Sign In <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                  </li>
 
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-<div class="wrapper">
-    <div class="preloader"></div>
+                   <li class="nav-item @ @listing__active">
+                      <a class="nav-link" href="{{ route('register') }}">Sign Up <i class="fa fa-user-plus" aria-hidden="true"></i></a>
+                  </li>
+                     
+                      @endauth
 
-    <!-- Main Header Nav -->
-    <header class="header-nav menu_style_home_one style2 navbar-scrolltofixed stricky main-menu">
-        <div class="container-fluid p0">
-            <!-- Ace Responsive Menu -->
-            <nav>
-                <!-- Menu Toggle btn-->
-                <div class="menu-toggle">
-                    <img class="nav_logo_img img-fluid" src="images/header-logo.png" alt="header-logo.png">
-                    <button type="button" id="menu-btn">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <a href="#" class="navbar_brand float-left dn-smd">
-                    <img class="logo1 img-fluid" src="images/header-logo2.png" alt="header-logo.png">
-                    <img class="logo2 img-fluid" src="images/header-logo2.png" alt="header-logo2.png">
-                    <span>FindHouse</span>
-                </a>
-                <!-- Responsive Menu Structure-->
-                <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
-                <ul id="respMenu" class="ace-responsive-menu text-right" data-menu-style="horizontal">
-                    <li>
-                        <a href="#"><span class="title">Home</span></a>
-                        <!-- Level Two-->
-                        <ul>
-                            <li><a href="index-2.html">Home 1</a></li>
-                            <li><a href="index2.html">Home 2</a></li>
-                            <li><a href="index3.html">Home 3</a></li>
-                            <li><a href="index4.html">Home 4</a></li>
-                            <li><a href="index5.html">Home 5</a></li>
-                            <li><a href="index6.html">Home 6</a></li>
-                            <li><a href="index7.html">Home 7</a></li>
-                            <li><a href="index8.html">Home 8</a></li>
-                            <li><a href="index9.html">Home 9</a></li>
-                            <li><a href="index10.html">Home 10</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span class="title">Listing</span></a>
-                        <!-- Level Two-->
-                        <ul>
-                            <li>
-                                <a href="#">Listing Grid</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-grid-v1.html">Grid v1</a></li>
-                                    <li><a href="page-listing-grid-v2.html">Grid v2</a></li>
-                                    <li><a href="page-listing-grid-v3.html">Grid v3</a></li>
-                                    <li><a href="page-listing-grid-v4.html">Grid v4</a></li>
-                                    <li><a href="page-listing-grid-v5.html">Grid v5</a></li>
-                                    <li><a href="page-listing-full-width-grid.html">Grid Fullwidth</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Listing List</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-list.html">List V1</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Listing Style</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-parallax.html">Parallax Style</a></li>
-                                    <li><a href="page-listing-slider.html">Slider Style</a></li>
-                                    <li><a href="page-listing-map.html">Map Header</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Listing Half</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-half-map-v1.html">Map V1</a></li>
-                                    <li><a href="page-listing-half-map-v2.html">Map V2</a></li>
-                                    <li><a href="page-listing-half-map-v3.html">Map V3</a></li>
-                                    <li><a href="page-listing-half-map-v4.html">Map V4</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Agent View</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-agent-v1.html">Agent V1</a></li>
-                                    <li><a href="page-listing-agent-v2.html">Agent V2</a></li>
-                                    <li><a href="page-listing-agent-v3.html">Agent Details</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Agencies View</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-agencies-v1.html">Agencies V1</a></li>
-                                    <li><a href="page-listing-agencies-v2.html">Agencies V2</a></li>
-                                    <li><a href="page-listing-agencies-v3.html">Agencies Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-add-new-property.html">Create Listing</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span class="title">Property</span></a>
-                        <ul>
-                            <li>
-                                <a href="#">User Admin</a>
-                                <ul>
-                                    <li><a href="page-dashboard.html">Dashboard</a></li>
-                                    <li><a href="page-my-properties.html">My Properties</a></li>
-                                    <li><a href="page-message.html">My Message</a></li>
-                                    <li><a href="page-my-review.html">My Review</a></li>
-                                    <li><a href="page-my-favorites.html">My Favorites</a></li>
-                                    <li><a href="page-add-new-property.html">Add Property</a></li>
-                                    <li><a href="page-my-profile.html">My Profile</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Listing Single</a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="page-listing-single-v1.html">Single V1</a></li>
-                                    <li><a href="page-listing-single-v2.html">Single V2</a></li>
-                                    <li><a href="page-listing-single-v3.html">Single V3</a></li>
-                                    <li><a href="page-listing-single-v4.html">Single V4</a></li>
-                                    <li><a href="page-listing-single-v5.html">Single V5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-add-new-property.html">Create Listing</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span class="title">Pages</span></a>
-                        <ul>
-                            <li>
-                                <a href="#"><span class="title">Pages</span></a>
-                                <ul>
-                                    <li><a href="page-shop.html">Shop</a></li>
-                                    <li><a href="page-shop-single.html">Shop Single</a></li>
-                                    <li><a href="page-shop-cart.html">Cart</a></li>
-                                    <li><a href="page-shop-checkout.html">Checkout</a></li>
-                                    <li><a href="page-shop-order.html">Order</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-about.html">About Us</a></li>
-                            <li><a href="page-gallery.html">Gallery</a></li>
-                            <li><a href="page-faq.html">Faq</a></li>
-                            <li><a href="page-login.html">LogIn</a></li>
-                        <li><a href="page-compare.html">Membership</a></li>
-                        <li><a href="page-compare2.html">Membership 2</a></li>
-                        <li><a href="page-register.html">Register</a></li>
-                            <li><a href="page-service.html">Service</a></li>
-                            <li><a href="page-error.html">404 Page</a></li>
-                            <li><a href="page-terms.html">Terms and Conditions</a></li>
-                            <li><a href="page-ui-element.html">UI Elements</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span class="title">Blog</span></a>
-                        <ul>
-                            <li><a href="page-blog-v1.html">Blog List 1</a></li>
-                            <li><a href="page-blog-grid.html">Blog List 2</a></li>
-                            <li><a href="page-blog-single.html">Single Post</a></li>
-                        </ul>
-                    </li>
-                    <li class="last">
-                        <a href="page-contact.html"><span class="title">Contact</span></a>
-                    </li>
-                    <li class="list-inline-item list_s"><a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a></li>
-                    <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
-                </ul>
-            </nav>
+
+                  @endif
+               </ul>
+              </div>
+              <!--/search-right-->
+              <!-- <div class="search mx-3">
+                  <input class="search_box" type="checkbox" id="search_box">
+                  <label class="fa fa-search" for="search_box"></label>
+                  <div class="search_form">
+                      <form action="error.html" method="GET">
+                          <input type="text" placeholder="Search"><input type="submit" value="search">
+                      </form>
+                  </div>
+              </div> -->
+              <!--//search-right-->
+          </div>
+
+          <!-- toggle switch for light and dark theme -->
+         <!--  <div class="mobile-position">
+              <nav class="navigation">
+                  <div class="theme-switch-wrapper">
+                      <label class="theme-switch" for="checkbox">
+                          <input type="checkbox" id="checkbox">
+                          <div class="mode-container">
+                              <i class="gg-sun"></i>
+                              <i class="gg-moon"></i>
+                          </div>
+                      </label>
+                  </div>
+              </nav>
+          </div> -->
+          <!-- //toggle switch for light and dark theme -->
+      </nav>
+  </div>
+</header>
+<!--/header-->
+<section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
         </div>
-    </header>
-    <!-- Modal -->
-   
-
-    <!-- Main Header Nav For Mobile -->
-   
-
-    <!-- Inner Page Breadcrumb -->
- 
-
+    </div>
+</section>
     <!-- Our Contact -->
-    <section class="our-contact pb0 bgc-f7">
+
+    <section class="our-log bgc-fa" style="margin-bottom: 30px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-lg-6 offset-lg-3">
+          <div class="login_form inner_page">
+            @if (session('error'))
+            <div class="alert alert-danger" role="alert">
+                {{session('error')}}
+            </div>
+            @endif
+               <form class="contact_form" id="contact_form" name="contact_form" action="{{route('verify')}}" method="post">
+              @csrf
+              <div class="heading" style="margin-bottom: 30px;">
+               Please enter the OTP sent to your number: {{session('phone_number')}}
+                <!-- <p class="text-center">Don't have an account? <a class="text-thm" href="page-register.html">Sign Up!</a></p> -->
+              </div>
+              
+               <div class="form-group">
+                   <input type="hidden" name="phone_number" value="{{session('phone_number')}}">
+                   <input id="verification_code" name="verification_code" class="form-control required phone {{ $errors->has('verification_code') ? ' is-invalid' : '' }}" required="required" type="phone" placeholder="Phone" value="{{ old('verification_code') }}">
+                    @if ($errors->has('verification_code'))
+                       <span class="invalid-feedback" role="alert">
+                           <strong>{{ $errors->first('verification_code') }}</strong>
+                       </span>
+                   @endif
+               </div>
+
+
+              <button type="submit" class="btn btn-log btn-block btn-thm2">Send</button>
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{--   <section class="our-contact pb0 bgc-f7">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-xl-8">
@@ -295,137 +238,301 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <!-- Start Partners -->
-    <section class="start-partners bgc-thm pt50 pb50">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="start_partner tac-smd">
-                        <h2>Become a Real Estate Agent</h2>
-                        <p>We only work with the best companies around the globe</p>
-                    </div>
+
+<section class="w3l-footers-20">
+  <div class="footers20">
+    <div class="container">
+      <div class="footers20-content">
+        <div class="d-grid grid-col-4 grids-content">
+          <div class="column">
+            {{-- <a href="#url" class="link"><span class="fa fa-comments"></span></a> --}}
+            <a href="#url" class="title-small">About US</a>
+            <h4 style="color: #636769; font-size: 18px; font-family: 'Kumbh Sans', sans-serif;">RentGage helps simplify acquisition of home via Mortgage.
+RentGage help you pay your rent conveniently monthly.</h4>
+
+           {{--  <a href="#buytheme" class="btn btn-style btn-primary"> Schedule now
+              <span class="fa fa-long-arrow-right ml-2"></span> </a> --}}
+          </div>
+          <div class="column">
+           {{--  <a href="#url" class="link"><span class="fa fa-phone"></span></a> --}}
+            <a href="#url" class="title-small">We are Social</a>
+         {{--    <h4>Do you have questions or want more infomation? Call Now</h4> --}}
+            {{-- <a href="tel:+1-2345-678-11">
+              <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> +1-2345-678-11
+              </p>
+            </a> --}}
+            <ul class="footers-17_social">
+              {{-- <h4 class="d-inline mr-4">Follow us</h4> --}}
+              <li><a href="#url" class="twitter"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#url" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
+              <li><a href="#url" class="instagram"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+          <div class="column mt-lg-0 mt-md-5">
+            <a href="#url" class="title-small">We are Social</a>
+           {{--  <h4 class="mb-1">Download RentGage App Here</h4>
+            <p>and get latest news and updates</p> --}}
+           {{--  <form action="#" class="subscribe-form mt-4" method="post">
+              <div class="form-group">
+                <input type="email" name="subscribe" placeholder="Enter your email" required="">
+                <button class="btn btn-style btn-primary">Subscribe</button>
+              </div>
+            </form> --}}
+           {{--  <ul class="footers-17_social">
+              <h4 class="d-inline mr-4">Follow us</h4>
+              <li><a href="#url" class="twitter"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#url" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
+              <li><a href="#url" class="instagram"><span class="fa fa-instagram"></span></a></li>
+            </ul> --}}
+            <p><a href="#"><img src="assets/images/google.png" width="150" alt=""></a> <a href="#"><img src="assets/images/app.png" width="150" height="40" alt=""></a></p>
+          </div>
+        </div>
+{{-- 
+        <section class="w3l-bottom-grids py-5" id="steps">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="grids-area-hny main-cont-wthree-fea row">
+            <div class="col-lg-4 col-md-6 grids-feature">
+                <div class="area-box no-box-shadow text-left">
+                    <span class="fa fa-search-plus"></span>
+                    <h5>All in one place</h5>
+                    
                 </div>
-                <div class="col-lg-4">
-                    <div class="parner_reg_btn text-right tac-smd">
-                        <a class="btn btn-thm2" href="#">Register Now</a>
-                    </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
+                <div class="area-box no-box-shadow text-left">
+                    <span class="fa fa-user-o"></span>
+                    <h5>Connect to an agent</h5>
+                   
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
+                <div class="area-box no-box-shadow text-left">
+                    <span class="fa fa-home"></span>
+                    <h5>Get a home valuation</h5>
+                    
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section> --}}
 
-    <!-- Our Footer -->
-    <section class="footer_one">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pr0 pl0">
-                    <div class="footer_about_widget">
-                        <h4>About Site</h4>
-                        <p>We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                    <div class="footer_qlink_widget">
-                        <h4>Quick Links</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">User’s Guide</a></li>
-                            <li><a href="#">Support Center</a></li>
-                            <li><a href="#">Press Info</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                    <div class="footer_contact_widget">
-                        <h4>Contact Us</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="__cf_email__" data-cfemail="066f68606946606f68626e697375632865696b">[email&#160;protected]</span></a></li>
-                            <li><a href="#">Collins Street West, Victoria</a></li>
-                            <li><a href="#">8007, Australia.</a></li>
-                            <li><a href="#">+1 246-345-0699</a></li>
-                            <li><a href="#">+1 246-345-0695</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                    <div class="footer_social_widget">
-                        <h4>Follow us</h4>
-                        <ul class="mb30">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a></li>
-                        </ul>
-                        <h4>Subscribe</h4>
-                        <form class="footer_mailchimp_form">
-                            <div class="form-row align-items-center">
-                                <div class="col-auto">
-                                    <input type="email" class="form-control mb-2" id="inlineFormInput" placeholder="Your email">
-                                </div>
-                                <div class="col-auto">
-                                    <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-angle-right"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        
 
-    <!-- Our Footer Bottom Area -->
-    <section class="footer_middle_area pt40 pb40">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-xl-6">
-                    <div class="footer_menu_widget">
-                        <ul>
-                            <li class="list-inline-item"><a href="#">Home</a></li>
-                            <li class="list-inline-item"><a href="#">Listing</a></li>
-                            <li class="list-inline-item"><a href="#">Property</a></li>
-                            <li class="list-inline-item"><a href="#">Pages</a></li>
-                            <li class="list-inline-item"><a href="#">Blog</a></li>
-                            <li class="list-inline-item"><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-6">
-                    <div class="copyright-widget text-right">
-                        <p>© 2020 Find House. Made with love.</p>
-                    </div>
-                </div>
-            </div>
+
+        <div class="d-grid grid-col-3 grids-content1 bottom-border1" style="width: 800px; position: relative; left: 300px;">
+          <div class="row">
+          <div style="margin-right:-60px; " class="col-md-2"><a href="">About Us</a></div>&nbsp; &nbsp;|
+          <div style="margin-right:-30px; " class="col-md-2"><a href="">How It Work</a></div>&nbsp; |
+          <div style="margin-right:-90px; " class="col-md-2"><a href="">FAQ</a></div>&nbsp;&nbsp; |
+          <div style="margin-right:-30px; " class="col-md-2"><a href="">Term of Use</a></div>&nbsp; |
+          <div style="margin-right:-30px; " class="col-md-2"><a href="">Private Policy</a></div>&nbsp;&nbsp; |
+          <div class="col-md-2"><a href="">Contact Us</a></div>
         </div>
-    </section>
-<a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
-</div>
-<!-- Wrapper End -->
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery-migrate-3.0.0.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery.mmenu.all.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/ace-responsive-menu.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/bootstrap-select.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/isotop.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/snackbar.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/simplebar.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/parallax.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/scrollto.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery-scrolltofixed-min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery.counterup.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/slider.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/timepicker.js')}}"></script>
-    <!-- Custom script for all pages -->
-    <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+        {{-- <div class="row">
+           <div class="columns copyright-grid align-self">
+             <p class="copy-footer-29">© 2020 Estate sale. All rights reserved | Designed by <a
+                 href="https://w3layouts.com">W3layouts</a></p>
+           </div>
+        </div> --}}
+          
+        </div>
+
+
+
+        
+        <div class="row" style="margin-top: 30px;">
+           <div class="columns copyright-grid align-self">
+             <p style="position:relative;left: 450px;" class="copy-footer-29">© 2020 Estate sale. All rights reserved 
+           </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+  <!-- move top -->
+  <button onclick="topFunction()" id="movetop" title="Go to top">
+    &#10548;
+  </button>
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("movetop").style.display = "block";
+      } else {
+        document.getElementById("movetop").style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <!-- /move top -->
+</section>
+
+<!-- jQuery and Bootstrap JS -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+
+<script src="assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+
+<!-- stats number counter-->
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.countup.js"></script>
+<script>
+  $('.counter').countUp();
+</script>
+<!-- //stats number counter -->
+
+<!-- owlcarousel -->
+<script src="assets/js/owl.carousel.js"></script>
+<!-- script for blog post slider -->
+<script>
+  $(document).ready(function () {
+    $('.owl-blog').owlCarousel({
+      loop: true,
+      margin: 30,
+      nav: false,
+      responsiveClass: true,
+      autoplay: false,
+      autoplayTimeout: 5000,
+      autoplaySpeed: 1000,
+      autoplayHoverPause: false,
+      responsive: {
+        0: {
+          items: 1,
+          nav: true
+        },
+        480: {
+          items: 1,
+          nav: true
+        },
+        700: {
+          items: 1,
+          nav: true
+        },
+        1090: {
+          items: 1,
+          nav: true
+        }
+      }
+    })
+  })
+</script>
+<!-- //script for blog post slider -->
+
+<!-- script for tesimonials carousel slider -->
+<script>
+  $(document).ready(function () {
+    $("#owl-demo1").owlCarousel({
+      loop: true,
+      nav: false,
+      margin: 50,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+          nav: false
+        },
+        736: {
+          items: 1,
+          nav: false
+        }
+      }
+    })
+  })
+</script>
+<!-- //script for tesimonials carousel slider -->
+
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.popup-with-zoom-anim').magnificPopup({
+      type: 'inline',
+
+      fixedContentPos: false,
+      fixedBgPos: true,
+
+      overflowY: 'auto',
+
+      closeBtnInside: true,
+      preloader: false,
+
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-zoom-in'
+    });
+
+    $('.popup-with-move-anim').magnificPopup({
+      type: 'inline',
+
+      fixedContentPos: false,
+      fixedBgPos: true,
+
+      overflowY: 'auto',
+
+      closeBtnInside: true,
+      preloader: false,
+
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-slide-bottom'
+    });
+  });
+</script>
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+  $(function () {
+    $('.navbar-toggler').click(function () {
+      $('body').toggleClass('noscroll');
+    })
+  });
+</script>
+<!-- disable body scroll which navbar is in active -->
+
+<!-- MENU-JS -->
+<script>
+  $(window).on("scroll", function () {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 80) {
+      $("#site-header").addClass("nav-fixed");
+    } else {
+      $("#site-header").removeClass("nav-fixed");
+    }
+  });
+
+  //Main navigation Active Class Add Remove
+  $(".navbar-toggler").on("click", function () {
+    $("header").toggleClass("active");
+  });
+  $(document).on("ready", function () {
+    if ($(window).width() > 991) {
+      $("header").removeClass("active");
+    }
+    $(window).on("resize", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+    });
+  });
+</script>
+<!-- //MENU-JS -->
+
+<!-- bootstrap -->
+<script src="assets/js/bootstrap.min.js"></script>
+
 </body>
 
-<!-- Mirrored from grandetest.com/theme/findhouse-html/page-contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Dec 2020 14:26:01 GMT -->
 </html>
+ 

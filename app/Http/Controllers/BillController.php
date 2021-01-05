@@ -14,6 +14,12 @@ use App\Property;
 
 use App\User;
 
+use App\Note;
+
+use App\Reply;
+
+use App\Bill;
+
 class BillController extends Controller
 {
     /**
@@ -22,8 +28,10 @@ class BillController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        $replies = Reply::all();
+        $notes = Note::all();
+        return view('bill.index',compact('replies','notes'));
     }
 
     /**
@@ -35,12 +43,16 @@ class BillController extends Controller
     {
        $user = Auth::user();
 
+       $notes = Note::all();
+
+       $replies = Reply::all();
+
        $the_user = $user->id;
 
-       $properties = Property::where('landlord_id',$the_user)->get();
+       $properties = Property::where('user_id',$the_user)->get();
        
         
-       return view('bill.create',compact('user','properties'));
+       return view('bill.create',compact('user','properties','notes','replies'));
     }
 
     /**
@@ -62,7 +74,14 @@ class BillController extends Controller
      */
     public function show($id)
     {
-        //
+        $notes = Note::all();
+        $replies = Reply::all();
+
+       $notebill = Note::findOrFail($id);
+
+        // return  $notebill;
+
+        return view('bill.show',compact('notes','replies','notebill'));
     }
 
     /**

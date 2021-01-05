@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Property;
+
 class PagesController extends Controller
 {
-    public function about(){
-        return view ('pages.about');
+    public function listing(){
+
+        $properties = Property::all();
+        return view ('newpages.listings',compact('properties'));
     }
 
-    public function contact(){
-        return view ('pages.contact');
+    public function single($id){
+        $property = Property::findOrFail($id);
+        return view ('newpages.single',compact('property'));
     }
 
     public function faq(){

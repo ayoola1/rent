@@ -14,6 +14,10 @@ use App\User;
 
 use App\Role;
 
+use App\Note;
+
+use App\Reply;
+
 use App\Landlord;
 
 use App\Property;
@@ -35,7 +39,9 @@ class LandlordController extends Controller
     {  
        $tenants = Tenant::all();
        $properties = Property::all();
-       return view('landlord',compact('tenants','properties'));
+       $notes = Note::all();
+       $replies = Reply::all();
+       return view('landlord',compact('tenants','properties','notes','replies'));
     }
 
     /**
@@ -125,8 +131,9 @@ class LandlordController extends Controller
     public function allLandlord(){
 
         $landlords = Landlord::all();
-
-        return view('landlord.the_landlord',compact('landlords'));
+        $notes = Note::all();
+        $replies = Reply::all();
+        return view('landlord.the_landlord',compact('landlords','notes','replies'));
     }
 
      public function allLand($id){
@@ -134,7 +141,8 @@ class LandlordController extends Controller
         // $land = Auth::user();
         $land = Landlord::findOrFail($id);
         $properties = Property::all();
-
-        return view('landlord.show',compact('properties','land'));
+        $notes = Note::all(); 
+        $replies = Reply::all();
+        return view('landlord.show',compact('properties','land','notes','replies'));
     }
 }

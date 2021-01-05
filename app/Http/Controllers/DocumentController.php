@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Session;
+
 use App\User;
 
 use App\Document;
+
+use App\Note;
+
+use App\Reply;
 
 class DocumentController extends Controller
 {
@@ -17,7 +23,10 @@ class DocumentController extends Controller
      */
     public function index()
     {
-       
+       $data = Document::all();
+       $notes = Note::all();
+       $replies = Reply::all();
+       return view('document.index',compact('data','notes','replies'));
          
     }
 
@@ -27,8 +36,10 @@ class DocumentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('document.create');
+    {   
+         $notes = Note::all();
+         $replies = Reply::all();
+        return view('document.create',compact('notes','replies'));
     }
 
     /**
@@ -39,23 +50,53 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
+
+        $input = $request->all();
             
-            $input = $request->all();
+          if($request->hasFile('file')){
+              
+              foreach ($request->file('file') as $file) {
+                  
+                  $name = time().$file->getClientOriginalName();
 
-            if($file = $request->file('file')){
+                 
 
-               $name = time() . $file->getClientOriginalName();
+                  $file->move('document_images',$name);
 
-               $file->move('document_images',$name);
+                  $data[] = $name;
+              }
+          }
 
-               $input['file'] = $name;
-            }
+           
+            $input['file'] = json_encode($data);
 
-             Document::create($input);
-        
+            Document::create($input);
+
+
              Session::flash('the_success','Your Images has been uploaded!');
 
-             return redirect()->back;
+            return redirect()->back();
+
+
+
+
+
+            // $input = $request->all();
+
+            // if($file = $request->file('file')){
+
+            //    $name = time() . $file->getClientOriginalName();
+
+            //    $file->move('document_images',$name);
+
+            //    $input['file'] = $name;
+            // }
+
+            //  Document::create($input);
+        
+            //  Session::flash('the_success','Your Images has been uploaded!');
+
+            //  return redirect()->back;
     }
 
     /**
@@ -103,5 +144,11 @@ class DocumentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getDownload($file_name){
+
+        $file_path = public_path('document_images/'.$file_name);
+        return response()->download($file_path);
     }
 }

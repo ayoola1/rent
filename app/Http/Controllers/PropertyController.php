@@ -18,6 +18,10 @@ use App\Landlord;
 
 use App\Property;
 
+use App\Note;
+
+use App\Reply;
+
 class PropertyController extends Controller
 {
     /**
@@ -28,8 +32,9 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all();
-
-        return view('property.index',compact('properties'));
+        $notes = Note::all();
+        $replies = Reply::all();
+        return view('property.index',compact('properties','notes','replies'));
     }
 
     /**
@@ -42,12 +47,13 @@ class PropertyController extends Controller
         // $types = Type::pluck('name','id')->all();
         $types = Type::all();
         $user = Auth::user();
-
+        $notes = Note::all();
+        $replies = Reply::all();
         $the_id = $user->id;
 
         $the_pro = Property::where('user_id','=',$the_id)->get();
         
-        return view('property.create',compact('types','user','the_pro'));
+        return view('property.create',compact('types','user','the_pro','notes','replies'));
     }
 
     /**
@@ -71,7 +77,8 @@ class PropertyController extends Controller
           'type_id' => 'required',
           'image'=> 'required',
            // 'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-          'utilities'=>'required'
+          'utilities'=>'required',
+          'propert_desc'=>'required'
 
 
         ]);
@@ -85,10 +92,17 @@ class PropertyController extends Controller
             $file->move('property_images',$name);
 
             $input['image'] = $name;
+
             
         }
+
+        
          
         $input['utilities'] = $request->input('utilities');
+        
+        $sam = implode(",",$input['utilities']);
+
+        $input['utilities'] = $sam;
 
         Property::create($input);
 
@@ -106,10 +120,24 @@ class PropertyController extends Controller
     public function show($id)
     {
        $property = Property::findOrFail($id);
-
+       $notes = Note::all();
+       $replies = Reply::all();
        // return $property;
 
-       return view('property.show',compact('property'));
+       return view('property.show',compact('property','notes','replies'));
+    }
+
+
+     public function theshow($id)
+    {
+       $property = Property::findOrFail($id);
+
+       $tenants = Tenant::all();
+
+       $notes = Note::all();
+       $replies = Reply::all();
+
+       return view('property.theshow',compact('property','tenants','notes','replies'));
     }
 
     /**
@@ -122,9 +150,30 @@ class PropertyController extends Controller
     {
         $property = Property::findOrFail($id);
         $tenant = Tenant::all();
+        $notes = Note::all();
+        $replies = Reply::all();
+
+        return view('property.edit',compact('property','tenant','notes','replies'));
+    }
 
 
-        return view('property.edit',compact('property','tenant'));
+     public function editProperty($id)
+    {
+        $editproperty = Property::findOrFail($id);
+        $tenant = Tenant::all();
+        $notes = Note::all();
+        $replies = Reply::all();
+
+        $types = Type::all();
+        $user = Auth::user();
+        
+        $the_id = $user->id;
+
+        $the_pro = Property::where('user_id','=',$the_id)->get();
+        
+        return view('property.editproperty',compact('tenant','editproperty','types','user','the_pro','notes','replies'));
+
+       
     }
 
     /**
@@ -136,7 +185,47 @@ class PropertyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $input = $request->all();
+
+        if($file = $request->file('image')){
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('property_images',$name);
+
+            $input['image'] = $name;
+
+            
+        }
+
+        
+         
+        $input['utilities'] = $request->input('utilities');
+        
+        $sam = implode(",",$input['utilities']);
+
+        $input['utilities'] = $sam;
+
+        $property = Property::findOrFail($id);
+
+        $property->update($input);
+
+        Session::flash('the_success','Property has been updated');
+
+        return redirect()->back();
+    }
+
+    public function updatepropTent(Request $request, $id)
+    {
+        $property = Property::findOrFail($id);
+
+        $input = $request->all();
+
+        $property->update($input);
+
+        Session::flash('the_success','Profile has beeen Updated!');
+
+        return redirect()->back();
     }
 
     /**
@@ -161,7 +250,11 @@ class PropertyController extends Controller
     {
         $properties = Property::all();
 
-        return view('property.mortgage',compact('properties'));
+        $replies = Reply::all();
+
+        $notes = Note::all();
+
+        return view('property.mortgage',compact('properties','replies','notes'));
     }
 
 
@@ -206,12 +299,12 @@ class PropertyController extends Controller
     // }
 
 
-    public function renantedit($id)
-    {
-        $property = Property::findOrFail($id);
+    // public function renantedit($id)
+    // {
+    //     $property = Property::findOrFail($id);
 
-        return view('property.edit',compact('property'));
-    }
+    //     return view('property.theshow',compact('property'));
+    // }
 
 
 

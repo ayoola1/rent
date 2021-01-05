@@ -1,417 +1,943 @@
- <!DOCTYPE html>
-<html dir="ltr" lang="en">
-
-<!-- Mirrored from grandetest.com/theme/findhouse-html/index7.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Dec 2020 14:24:06 GMT -->
-
-<head>
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="advanced search custom, agency, agent, business, clean, corporate, directory, google maps, homes, listing, membership packages, property, real estate, real estate agent, realestate agency, realtor">
-    <meta name="description" content="FindHouse - Real Estate HTML Template">
-    <meta name="CreativeLayers" content="ATFN">
-    <!-- css file -->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <!-- Responsive stylesheet -->
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-    <!-- Title -->
-    <title>FindHouse - Real Estate HTML Template</title>
-    <!-- Favicon -->
-    <link href="{{asset('images/favicon.ico')}}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
-    <link href="{{asset('images/favicon.ico')}}" sizes="128x128" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
+    <title>Estate sale - Real Estate Category Bootstrap Responsive Website Template - Home : W3layouts</title>
 
-<body>
-    <div class="wrapper">
-        <div class="preloader"></div>
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
-        <!-- Main Header Nav -->
-        <header class="header-nav menu_style_home_one home7 navbar-scrolltofixed stricky main-menu">
-            <div class="container p0">
-                <!-- Ace Responsive Menu -->
-                <nav>
-                    <!-- Menu Toggle btn-->
-                    <div class="menu-toggle">
-                        <img class="nav_logo_img img-fluid" src="{{asset('images/header-logo')}}.png" alt="header-logo.png">
-                        <button type="button" id="menu-btn">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    </div>
-                    <a href="#" class="navbar_brand float-left dn-smd">
-                        <img class="logo1 img-fluid" src="{{asset('images/header-logo.png')}}" alt="header-logo.png">
-                        <img class="logo2 img-fluid" src="{{asset('images/header-logo2.png')}}" alt="header-logo2.png">
-                        <span>FindHouse</span>
-                    </a>
-                    <!-- Responsive Menu Structure-->
-                    <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
-                    <ul id="respMenu" class="ace-responsive-menu text-right" data-menu-style="horizontal">
-                        <li>
-                            <a href="#"><span class="title">Home</span></a>
-                        </li>
-                        <li>
-                            <a href="{{route('property_index')}}"><span class="title">Property</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="title">Pages</span></a>
-                            <ul>
-                                <li><a href="{{route('about')}}">About Us</a></li>
-                                <li><a href="{{route('gallery')}}">Gallery</a></li>
-                                <li><a href="{{route('faq')}}">Faq</a></li>
-                                <li><a href="{{route('service')}}">Service</a></li>
-                                <li><a href="{{route('terms')}}">Terms and Conditions</a></li>
-                            </ul>
-                        </li>
-                        <li class="last">
-                            <a href="{{route('contact')}}"><span class="title">Contact</span></a>
-                        </li>                   
-                        <li class="list-inline-item list_s">
-                            <a href="{{route('login')}}"> <span class="dn-lg">Login</span></a>
-                        </li>
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+  </head>
+  <body>
 
-                         <li class="list-inline-item list_s">
-                            <a href="{{route('register')}}"> <span class="dn-lg">Register</span></a>
-                        </li>
+<!--header-->
+<header id="site-header" class="fixed-top">
+  <div class="container">
+      <nav class="navbar navbar-expand-lg stroke px-0">
+          <h1> <a class="navbar-brand" href="index.html">
+                  <span class="fa fa-home"></span>&nbsp; <span style="color:#000">Rent</span><span style="color: #f93;">ga</span><span style="color: #000;">ge</span>
+              </a></h1>
+          <!-- if logo is image enable this   
+  <a class="navbar-brand" href="#index.html">
+      <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+  </a> -->
+          <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+              data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+              <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+          </button>
 
-                        {{-- <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li> --}}
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav ml-lg-5 mr-auto">
+
+                
+
+                  <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item @@listing__active">
+                      <a class="nav-link" href="listing.html">About</a>
+                  </li>
+                  <li class="nav-item @@listing__active">
+                      <a class="nav-link" href="listing.html">Property on mortgage</a>
+                  </li>
+                  <li class="nav-item @@listing__active">
+                      <a class="nav-link" href="listing.html">Property for rent</a>
+                  </li>
+              </ul>
+              <div class="top-quote mt-lg-0">
+                <ul class="navbar-nav ml-lg-5 mr-auto">
+
+                  @if(Route::has('login'))
+
+                  <li class="nav-item">
+
+                      @auth
+
+                      <a class="nav-link" href="{{ url('/home') }}">Home <i class="fa fa-sign-in" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
+                  </li>
+
+                      @else
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ route('login') }}">Sign In <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                  </li>
+
+
+                   <li class="nav-item @ @listing__active">
+                      <a class="nav-link" href="{{ route('register') }}">Sign Up <i class="fa fa-user-plus" aria-hidden="true"></i></a>
+                  </li>
+                     
+                      @endauth
+
+
+                  @endif
+               </ul>
+              </div>
+              <!--/search-right-->
+              <!-- <div class="search mx-3">
+                  <input class="search_box" type="checkbox" id="search_box">
+                  <label class="fa fa-search" for="search_box"></label>
+                  <div class="search_form">
+                      <form action="error.html" method="GET">
+                          <input type="text" placeholder="Search"><input type="submit" value="search">
+                      </form>
+                  </div>
+              </div> -->
+              <!--//search-right-->
+          </div>
+
+          <!-- toggle switch for light and dark theme -->
+         <!--  <div class="mobile-position">
+              <nav class="navigation">
+                  <div class="theme-switch-wrapper">
+                      <label class="theme-switch" for="checkbox">
+                          <input type="checkbox" id="checkbox">
+                          <div class="mode-container">
+                              <i class="gg-sun"></i>
+                              <i class="gg-moon"></i>
+                          </div>
+                      </label>
+                  </div>
+              </nav>
+          </div> -->
+          <!-- //toggle switch for light and dark theme -->
+      </nav>
+  </div>
+</header>
+<!--/header-->
+<section class="w3l-cover-3">
+        <div class="cover top-bottom">
+            <div class="container">
+
+         <div class="row">
+           
+            <div class="col-lg-7">
+               <div class="middle-section text-center">
+                <div class="section-width">
+                  <p style="color: #000">Everyone deserves an opportunity to have a home!</p>
+                  <h2 style="text-align: center;color: #000;">Find a comfortable Home for yourself</h2>
+                  <!-- <div class="most-searches">
+                    <h4>Most Searches</h4>
+                    <ul>
+                      <li><a href="#link">Villa</a></li>
+                      <li><a href="#link">Apartment</a></li>
+                      <li><a href="#link">Private house</a></li>
                     </ul>
-                </nav>
+                  </div> -->
+            <form action="#" class="w3l-cover-3-gd intform" method="GET">
+              <input type="search" name="text" placeholder="Find a home" required>
+             <!--  <span class="input-group-btn">
+                <select class="btn btn-default" name="ext" required>
+                  <option selected="">Office</option>
+                  <option>Villa</option>
+                  <option>Apartment</option>
+                  <option>Private house</option>
+                  <option>Building</option>
+                  <option>Shop</option>
+                  <option>Social housing</option>
+                  <option>Town house</option>
+                </select>
+              </span> -->
+              <span class="input-group-btn">
+                <select class="btn btn-default" name="ext" required>
+                  <option selected="">Select Country</option>
+                  <option>Australia</option>
+                  <option>London</option>
+                  <option>India</option>
+                  <option>Bangladesh</option>
+                  <option>Saudi Arabia</option>
+                  <option>America</option>
+                  <option>Srilanka</option>
+                </select>
+              </span>
+              <button type="submit" class="btn-primary">Search</button>
+            </form>
+                </div>
+              </div>
             </div>
-        </header>
-        <!-- Modal -->
 
+             <div class="col-lg-5 mt-5">
+              <img src="assets/images/home.png" class="img-fluid" alt="">
+            </div>
 
-        <div class="sign_up_modal modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div class="modal-body container pb20">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <ul class="sign_up_tab nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Login</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Register</a>
-                                    </li>
-                                </ul>
+         </div>
+                <div class="middle-section text-center">
+                    <!-- <div class="section-width">
+                        <p>It's great to be home!</p>
+                        <h2>Find a property today</h2>
+                        <div class="most-searches">
+                            <h4>Most Searches</h4>
+                            <ul>
+                                <li><a href="#link">Villa</a></li>
+                                <li><a href="#link">Apartment</a></li>
+                                <li><a href="#link">Private house</a></li>
+                            </ul>
+                        </div>
+                        <form action="#" class="w3l-cover-3-gd" method="GET">
+                            <input type="search" name="text" placeholder="Enter keywords" required>
+                            <span class="input-group-btn">
+                                <select class="btn btn-default" name="ext" required>
+                                    <option selected="">Office</option>
+                                    <option>Villa</option>
+                                    <option>Apartment</option>
+                                    <option>Private house</option>
+                                    <option>Building</option>
+                                    <option>Shop</option>
+                                    <option>Social housing</option>
+                                    <option>Town house</option>
+                                </select>
+                            </span>
+                            <span class="input-group-btn">
+                                <select class="btn btn-default" name="ext" required>
+                                    <option selected="">Select Country</option>
+                                    <option>Australia</option>
+                                    <option>London</option>
+                                    <option>India</option>
+                                    <option>Bangladesh</option>
+                                    <option>Saudi Arabia</option>
+                                    <option>America</option>
+                                    <option>Srilanka</option>
+                                </select>
+                            </span>
+                            <button type="submit" class="btn-primary">Search</button>
+                        </form>
+                    </div> -->
+                    <section id="bottom" class="demo">
+                        <a href="#bottom"><span></span>Scroll</a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="locations-1" id="locations">
+    <div class="locations py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="heading text-center mx-auto">
+                <h3 class="title-big">Top Properties</h3>
+            </div>
+            <div class="row pt-md-5 pt-4">
+                <div class="col-lg-4 col-md-6">
+                    <a href="property-single.html">
+                        <div class="box16">
+                            <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                            <img class="img-fluid" src="assets/images/p1.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title">$25,00,000</h3>
+                                <span class="post">51 Merrick Way, Coral Gables, USA</span>
                             </div>
                         </div>
-                        <div class="tab-content container" id="myTabContent">
-                            <div class="row mt25 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="login_thumb">
-                                        <img class="img-fluid w100" src="{{asset('images/resource/login.jpg')}}" alt="login.jpg">
-                                    </div>
-                                </div>
-                                {{-- <div class="col-lg-6 col-xl-6">
-                                    <div class="login_form">
-                                        <form action="{{route('login')}}" method="POST">
-                                            @csrf
-                                            <div class="heading">
-                                                <h4>Login</h4>
-                                            </div>
-                                            <div class="row mt25">
-                                                <div class="col-lg-12">
-                                                    <button type="submit" class="btn btn-fb btn-block"><i class="fa fa-facebook float-left mt5"></i> Login with Facebook</button>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <button type="submit" class="btn btn-googl btn-block"><i class="fa fa-google float-left mt5"></i> Login with Google</button>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="input-group mb-2 mr-sm-2">
-                                                <input type="text" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" id="inlineFormInputGroupUsername2" placeholder="User Name Or Email">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="flaticon-user"></i></div>
-                                                </div>
-                                                @if ($errors->has('email'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('email') }}</strong>
-                                                </span>
-                                            @endif
-                                            </div>
-                                            <div class="input-group form-group">
-                                                <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" value="{{ old('password') }}" id="exampleInputPassword1" placeholder="Password">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="flaticon-password"></i></div>
-                                                </div>
-                                                @if ($errors->has('password'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('password') }}</strong>
-                                                </span>
-                                            @endif
-                                            </div>
-                                            <div class="form-group custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="exampleCheck1">
-                                                <label class="custom-control-label" for="exampleCheck1">Remember me</label>
-                                                <a class="btn-fpswd float-right" href="#">Lost your password?</a>
-                                            </div>
-                                            <button type="submit" class="btn btn-log btn-block btn-thm">Log In</button>
-                                            <p class="text-center">Don't have an account? <a class="text-thm" href="#">Register</a></p>
-                                        </form>
-                                    </div>
-                                </div> --}}
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                    <a href="property-single.html">
+                        <div class="box16">
+                            <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                            <img class="img-fluid" src="assets/images/p2.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title">$37,00,000</h3>
+                                <span class="post">51 Merrick Way, Coral Gables, USA</span>
+
                             </div>
-                            <div class="row mt25 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="regstr_thumb">
-                                        <img class="img-fluid w100" src="{{asset('images/resource/regstr.jpg')}}" alt="regstr.jpg">
-                                    </div>
-                                </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 pt-lg-0 mt-4 pt-md-2">
+                    <a href="property-single.html">
+                        <div class="box16">
+                            <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                            <img class="img-fluid" src="assets/images/p3.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title">$41,00,000</h3>
+                                <span class="post">51 Merrick Way, Coral Gables, USA</span>
 
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4 pt-md-2">
+                    <a href="property-single.html">
+                        <div class="box16">
+                            <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                            <img class="img-fluid" src="assets/images/p4.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title">$19,00,000</h3>
+                                <span class="post">51 Merrick Way, Coral Gables, USA</span>
 
-                               {{--  <div class="col-lg-6 col-xl-6">
-                                    <div class="sign_up_form">
-                                        <div class="heading">
-                                            <h4>Register</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4 pt-md-2">
+                    <a href="property-single.html">
+                        <div class="box16">
+                            <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                            <img class="img-fluid" src="assets/images/p5.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title">$26,00,000</h3>
+                                <span class="post">51 Merrick Way, Coral Gables, USA</span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4 pt-md-2">
+                    <a href="property-single.html">
+                        <div class="box16">
+                            <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                            <img class="img-fluid" src="assets/images/p6.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title">$34,00,000</h3>
+                                <span class="post">51 Merrick Way, Coral Gables, USA</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="w3l-index3" id="about">
+    <div class="midd-w3 pb-5">
+        <div class="container pb-lg-5 pb-md-4 pb-2">
+            <div class="row">
+                <div class="col-lg-5 pr-lg-0">
+                    <div class="w3l-left-img">
+                    </div>
+                </div>
+                <div class="col-lg-7 pl-lg-0">
+                    <div class="w3l-right-info">
+                        <h6 class="title-small">Who we are</h6>
+                        <h3 class="title-big">The experts in local and international property</h3>
+                        <p class="mt-4">We have over 15 year experience, Over 20,000 people work for us in more than 70
+                            countries all over the world. Learn more about our work!
+                            Lorem ipsum vive dolor sit amet.
+                        </p>
+                        <p class="mt-3">Viverra feugiat. Pellen tesque libero ut justo,
+                            ultrices in ligula. Semper at tempufddfel lorem ipsum.</p>
+                        <ul class="w3l-right-book w3l-right-book-grid mt-md-5 mt-4">
+                            <li><span class="fa fa-check" aria-hidden="true"></span>Outstanding property</li>
+                            <li><span class="fa fa-check" aria-hidden="true"></span>Social responsibility</li>
+                            <li><span class="fa fa-check" aria-hidden="true"></span>Get expert advice</li>
+                            <li><span class="fa fa-check" aria-hidden="true"></span>Group structure</li>
+                            <li><span class="fa fa-check" aria-hidden="true"></span>Specialist services</li>
+                            <li><span class="fa fa-check" aria-hidden="true"></span>Vision & strategy</li>
+                        </ul>
+                        <a href="#services" class="btn btn-style btn-primary mt-4">Discover our services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- /bottom-grids-->
+<section class="w3l-bottom-grids py-5" id="steps">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="grids-area-hny main-cont-wthree-fea row">
+            <div class="col-lg-4 col-md-6 grids-feature">
+                <div class="area-box no-box-shadow">
+                    <span class="fa fa-home"></span>
+                    <h4><a href="#feature" class="title-head">Buy a home</a></h4>
+                    <p>Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis in faucibus orci.</p>
+                    <a href="#more" class="more">Read More <span class="fa fa-long-arrow-right"></span> </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
+                <div class="area-box no-box-shadow">
+                    <span class="fa fa-home"></span>
+                    <h4><a href="#feature" class="title-head">Rent a home </a></h4>
+                    <p>Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis in faucibus orci.</p>
+                    <a href="#more" class="more">Read More <span class="fa fa-long-arrow-right"></span> </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
+                <div class="area-box no-box-shadow">
+                    <span class="fa fa-building-o"></span>
+                    <h4><a href="#feature" class="title-head">See neighbourhoods</a></h4>
+                    <p>Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis in faucibus orci.</p>
+                    <a href="#more" class="more">Read More <span class="fa fa-long-arrow-right"></span> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //bottom-grids-->
+<section class="locations-1 popular" id="locations">
+    <div class="locations py-5">
+        <div class="container py-lg-5 py-md-4">
+            <div class="heading text-center mx-auto">
+                <h6 class="title-small">Explore cities</h6>
+                <h3 class="title-big">Popular Locations</h3>
+            </div>
+            <div class="row pt-5">
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a href="#url">
+                        <div class="box16">
+                            <img class="img-fluid" src="assets/images/p1.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title mb-1">Newyork</h3>
+                                <span class="post">4 listings</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a href="#url">
+                        <div class="box16">
+                            <img class="img-fluid" src="assets/images/p2.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title mb-1">California</h3>
+                                <span class="post">4 listings</span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mt-md-0 pt-md-0 mt-sm-4 mt-3 pt-md-2">
+                    <a href="#url">
+                        <div class="box16">
+                            <img class="img-fluid" src="assets/images/p3.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title mb-1">Las vegas</h3>
+                                <span class="post">4 listings</span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mt-lg-0 pt-lg-0 mt-sm-4 mt-3 pt-md-2">
+                    <a href="#url">
+                        <div class="box16">
+                            <img class="img-fluid" src="assets/images/p4.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title mb-1">Malaysia</h3>
+                                <span class="post">4 listings</span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mt-sm-4 mt-3 pt-md-2">
+                    <a href="#url">
+                        <div class="box16">
+                            <img class="img-fluid" src="assets/images/p5.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title mb-1">Paris</h3>
+                                <span class="post">4 listings</span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mt-sm-4 mt-3 pt-md-2">
+                    <a href="#url">
+                        <div class="box16">
+                            <img class="img-fluid" src="assets/images/p6.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title mb-1">New Jersy</h3>
+                                <span class="post">4 listings</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mt-sm-4 mt-3 pt-md-2">
+                    <a href="#url">
+                        <div class="box16">
+                            <img class="img-fluid" src="assets/images/p7.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title mb-1">France</h3>
+                                <span class="post">4 listings</span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mt-sm-4 mt-3 pt-md-2">
+                    <a href="#url">
+                        <div class="box16">
+                            <img class="img-fluid" src="assets/images/p8.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title mb-1">Newyork</h3>
+                                <span class="post">4 listings</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="w3l-index3" id="about">
+    <div class="midd-w3 py-5">
+        <div class="container pb-lg-5 pb-md-4 pb-2">
+            <div class="row">
+                <div class="col-lg-5 pr-lg-0">
+                    <div class="w3l-left-img1">
+                    </div>
+                </div>
+                <div class="col-lg-7 pl-lg-0">
+                    <div class="w3l-right-info">
+                        <h6 class="title-small">Our clients</h6>
+                        <div class="client-grid">
+                            <div class="client-title">
+                                <h3 class="title-big">We value client relationships</h3>
+                            </div>
+                            <div class="clients-info">
+                                <h3 class="title-big">45,200</h3>
+                                <p>Satisfied customers</p>
+                            </div>
+                        </div>
+
+                        <div class="w3l-clients" id="testimonials">
+                            <div id="owl-demo1" class="owl-carousel owl-theme mt-4 pt-2 mb-4">
+                                <div class="item">
+                                    <div class="testimonial-content">
+                                        <div class="testimonial">
+                                            <div class="testi-des">
+                                                <div class="peopl align-self">
+                                                    <h4>John wilson</h4>
+                                                    <p class="indentity">Communication executive</p>
+                                                </div>
+                                            </div>
+                                            <blockquote>
+                                                <q>OMG! I cannot believe that I have got a property new private house after
+                                                    getting villa. It was very comfortable. I can't say enough about Real Estate</q>
+                                            </blockquote>
                                         </div>
-                                        <form method="POST" action="{{ route('register') }}">
-                                           @csrf
-                                            <div class="form-group input-group">
-                                                <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" id="exampleInputName" placeholder="Name" required>
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="flaticon-user"></i></div>
-                                                </div>
-
-                                                @if ($errors->has('name'))
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $errors->first('name') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </div>
-
-                                            <div class="form-group input-group">
-                                                <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" id="exampleInputEmail2" placeholder="Email" required="">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="fa fa-envelope-o"></i></div>
-                                                </div>
-                                                  @if ($errors->has('email'))
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $errors->first('email') }}</strong>
-                                                        </span>
-                                                  @endif
-                                            </div>
-
-                                            <div class="form-group input-group">
-                                                
-                                                <input type="text" class="form-control {{ $errors->has('phone_number') ? ' is-invalid' : '' }}" name="phone_number" id="exampleInputPassword2" placeholder="Phone number" required="">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="flaticon-password"></i></div>
-                                                </div>
-
-                                                 @if ($errors->has('phone_number'))
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $errors->first('phone_number') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </div>
-
-
-                                            <div class="form-group input-group">
-                                                <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" id="exampleInputPassword2" placeholder="Password" name="password" required="">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="flaticon-password"></i></div>
-                                                </div>
-
-                                                  @if ($errors->has('password'))
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $errors->first('password') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </div>
-                                            <div class="form-group input-group">
-                                                <input type="password" class="form-control" id=" exampleInputPassword3" name="password_confirmation" placeholder="Re-enter password">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="flaticon-password"></i></div>
-                                                </div>
-                                            </div>
-                                          
-                                            <button type="submit"  class="btn btn-log btn-block btn-thm">Sign Up</button>
-                                            <p class="text-center">Already have an account? <a class="text-thm" href="#">Log In</a></p>
-                                        </form>
                                     </div>
-                                </div> --}}
+                                </div>
+                                <div class="item">
+                                    <div class="testimonial-content">
+                                        <div class="testimonial">
+                                            <div class="testi-des">
+                                                <div class="peopl align-self">
+                                                    <h4>Julia sakura</h4>
+                                                    <p class="indentity">Digital Marketer</p>
+                                                </div>
+                                            </div>
+                                            <blockquote>
+                                                <q>OMG! I cannot believe that I have got a property new private house after
+                                                    getting villa. It was very comfortable. I can't say enough about Real Estate</q>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testimonial-content">
+                                        <div class="testimonial">
+                                            <div class="testi-des">
+                                                <div class="peopl align-self">
+                                                    <h4>John wilson</h4>
+                                                    <p class="indentity">Web Developer</p>
+                                                </div>
+                                            </div>
+                                            <blockquote>
+                                                <q>OMG! I cannot believe that I have got a property new private house after
+                                                    getting villa. It was very comfortable. I can't say enough about Real Estate</q>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testimonial-content">
+                                        <div class="testimonial">
+                                            <div class="testi-des">
+                                                <div class="peopl align-self">
+                                                    <h4>Julia sakura</h4>
+                                                    <p class="indentity">Digital Marketer</p>
+                                                </div>
+                                            </div>
+                                            <blockquote>
+                                                <q>OMG! I cannot believe that I have got a property new private house after
+                                                    getting villa. It was very comfortable. I can't say enough about Real Estate</q>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+
+                        <a href="#agents" class="btn btn-style btn-primary mt-5">Contact our agents</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- /bottom-grids-->
+<section class="w3l-bottom-grids py-5" id="steps">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="grids-area-hny main-cont-wthree-fea row">
+            <div class="col-lg-4 col-md-6 grids-feature">
+                <div class="area-box no-box-shadow text-left">
+                    <span class="fa fa-search-plus"></span>
+                    <h5>All in one place</h5>
+                    <h4><a href="#feature" class="title-head">Your One-Stop Shop for Finding Your Dream Home</a></h4>
+                    <p>Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor in orci.</p>
+                    <a href="#more" class="more">Search for home<span class="fa fa-long-arrow-right"></span> </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
+                <div class="area-box no-box-shadow text-left">
+                    <span class="fa fa-user-o"></span>
+                    <h5>Connect to an agent</h5>
+                    <h4><a href="#feature" class="title-head">Schedule a Free, No-Obligation Appointment</a></h4>
+                    <p>Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor in orci.</p>
+                     <a href="#more" class="more">Find an agent <span class="fa fa-long-arrow-right"></span> </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
+                <div class="area-box no-box-shadow text-left">
+                    <span class="fa fa-home"></span>
+                    <h5>Get a home valuation</h5>
+                    <h4><a href="#feature" class="title-head">Understand the Value of Your Property </a></h4>
+                    <p>Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor in orci.</p>
+                    <a href="#more" class="more">Submit info <span class="fa fa-long-arrow-right"></span> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //bottom-grids-->
+<!--  News section -->
+<div class="w3l-news" id="news">
+    <section id="grids5-block" class="py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <h3 class="title-big text-center">Tips and Advices</h3>
+            <div class="row mt-lg-5 mt-4 pt-3">
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-4">
+                    <div class="grids5-info">
+                        <span class="posted-date">
+                            <a href="#blog-single">
+                                <span class="small">2020</span>
+                                <span class="big">16</span>
+                                <span class="small">October</span>
+                            </a>
+                        </span>
+                        <a href="#blog-single" class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                                class="img-fluid news-image" /></a>
+                        <div class="blog-info">
+                            <a href="#category" class="category">Uncategorized</a>
+                            <h4><a href="#blog-single">Retail banks wake up to digital lending this year</a></h4>
+                            <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                    <div class="grids5-info">
+                        <span class="posted-date">
+                            <a href="#blog-single">
+                                <span class="small">2020</span>
+                                <span class="big">19</span>
+                                <span class="small">October</span>
+                            </a>
+                        </span>
+                        <a href="#blog-single" class="d-block zoom"><img src="assets/images/p2.jpg" alt=""
+                                class="img-fluid news-image" /></a>
+                        <div class="blog-info">
+                            <a href="#category" class="category">Uncategorized</a>
+                            <h4><a href="#blog-single">A digital prescription for the pharma industry</a></h4>
+                            <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
+                    <div class="grids5-info">
+                        <span class="posted-date">
+                            <a href="#blog-single">
+                                <span class="small">2020</span>
+                                <span class="big">20</span>
+                                <span class="small">October</span>
+                            </a>
+                        </span>
+                        <a href="#blog-single" class="d-block zoom"><img src="assets/images/p3.jpg" alt=""
+                                class="img-fluid news-image" /></a>
+                        <div class="blog-info">
+                            <a href="#category" class="category">Uncategorized</a>
+                            <h4><a href="#blog-single">Harvest great ideas from your company’s best assets</a></h4>
+                            <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Main Header Nav For Mobile -->
-        <div id="page" class="stylehome1 h0">
-            <div class="mobile-menu">
-                <div class="header stylehome1">
-                    <div class="main_logo_home2 text-center">
-                        <img class="nav_logo_img img-fluid mt20" src="{{asset('images/header-logo2.png')}}" alt="header-logo2.png">
-                        <span class="mt20">FindHouse</span>
+    </section>
+</div>
+<!--  //News section -->
+<section class="w3l-companies-hny-6 py-5">
+    <!-- /grids -->
+        <div class="container py-md-3">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-6 column">
+                    <div class="company-gd">
+                        <a href="#client"><img class="img-responsive" src="assets/images/client1.png" alt="client"> </a>
                     </div>
-                    <ul class="menu_bar_home2">
-                        <li class="list-inline-item list_s"><a href="page-register.html"><span class="flaticon-user"></span></a></li>
-                        <li class="list-inline-item"><a href="#menu"><span></span></a></li>
-                    </ul>
                 </div>
-            </div>
-            <!-- /.mobile-menu -->
-            <nav id="menu" class="stylehome1">
-                <ul>
-                    <li><span>Home</span>
-                        <ul>
-                            <li><a href="#">Home </a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{route('property_index')}}"><span class="title">Property</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="title">Pages</span></a>
-                        <ul>
-                            <li><a href="{{route('about')}}">About Us</a></li>
-                            <li><a href="{{route('gallery')}}">Gallery</a></li>
-                            <li><a href="{{route('faq')}}">Faq</a></li>
-                            <li><a href="{{route('service')}}">Service</a></li>
-                            <li><a href="{{route('terms')}}">Terms and Conditions</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{{route('contact')}}">Contact</a></li>
-                    <li><a href="{{route('login')}}"><span class="flaticon-user"></span> Login</a></li>
-                    <li><a href="{{route('register')}}"><span class="flaticon-edit"></span> Register</a></li>
-                    {{-- <li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="#"><span class="flaticon-plus"></span> Create Listing</a></li> --}}
-                </ul>
-            </nav>
-        </div>      
-
-
-
-
-@yield('content')
-
-
-
-        <!-- Our Footer -->
-        <section class="footer_one home5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pr0 pl0">
-                        <div class="footer_about_widget home5">
-                            <h4>About Site</h4>
-                            <p>We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
-                        </div>
+                <div class="col-lg-2 col-md-4 col-6 column">
+                    <div class="company-gd">
+                        <a href="#client"><img class="img-responsive" src="assets/images/client2.png" alt="client"> </a>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                        <div class="footer_qlink_widget home5">
-                            <h4>Quick Links</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">User’s Guide</a></li>
-                                <li><a href="#">Support Center</a></li>
-                                <li><a href="#">Press Info</a></li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 column mt-md-0 mt-4">
+                    <div class="company-gd">
+                        <a href="#client"><img class="img-responsive" src="assets/images/client3.png" alt="client"> </a>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                        <div class="footer_contact_widget home5">
-                            <h4>Contact Us</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="#"><span class="__cf_email__" data-cfemail="0b62656d644b6d62656f63647e786e25686466">[email&#160;protected]</span></a></li>
-                                <li><a href="#">Collins Street West, Victoria</a></li>
-                                <li><a href="#">8007, Australia.</a></li>
-                                <li><a href="#">+1 246-345-0699</a></li>
-                                <li><a href="#">+1 246-345-0695</a></li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 column mt-lg-0 mt-4">
+                    <div class="company-gd">
+                        <a href="#client"><img class="img-responsive" src="assets/images/client4.png" alt="client"> </a>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                        <div class="footer_social_widget home5">
-                            <h4>Follow us</h4>
-                            <ul class="mb30">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a></li>
-                            </ul>
-                            <h4>Subscribe</h4>
-                            <form class="footer_mailchimp_form home5">
-                                <div class="form-row align-items-center">
-                                    <div class="col-auto">
-                                        <input type="email" class="form-control mb-2" id="inlineFormInput" placeholder="Your email">
-                                    </div>
-                                    <div class="col-auto">
-                                        <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-angle-right"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 column mt-lg-0 mt-4">
+                    <div class="company-gd">
+                        <a href="#client"><img class="img-responsive" src="assets/images/client5.png" alt="client"> </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 column mt-lg-0 mt-4">
+                    <div class="company-gd">
+                        <a href="#client"><img class="img-responsive" src="assets/images/client6.png" alt="client"> </a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Our Footer Bottom Area -->
-        <section class="footer_middle_area home5 pt30 pb30">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-xl-6">
-                        <div class="footer_menu_widget home5">
-                            <ul>
-                                <li class="list-inline-item"><a href="#">Home</a></li>
-                                <li class="list-inline-item"><a href="#">Property</a></li>
-                                <li class="list-inline-item"><a href="#">Pages</a></li>
-                                <li class="list-inline-item"><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-6">
-                        <div class="copyright-widget home5 text-right">
-                            <p>© 2020 Find House. Made with love.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <a class="scrollToHome home7" href="#"><i class="flaticon-arrows"></i></a>
+        </div>
+        <!-- //grids -->
+</section>
+ <!-- footers 20 -->
+ <section class="w3l-footers-20">
+  <div class="footers20">
+    <div class="container">
+      <div class="footers20-content">
+        <div class="d-grid grid-col-4 grids-content">
+          <div class="column">
+            <a href="#url" class="link"><span class="fa fa-comments"></span></a>
+            <a href="#url" class="title-small">Free consultation</a>
+            <h4>Schedule a free consultation with our specialist.</h4>
+            <a href="#buytheme" class="btn btn-style btn-primary"> Schedule now
+              <span class="fa fa-long-arrow-right ml-2"></span> </a>
+          </div>
+          <div class="column">
+            <a href="#url" class="link"><span class="fa fa-phone"></span></a>
+            <a href="#url" class="title-small">help desk</a>
+            <h4>Do you have questions or want more infomation? Call Now</h4>
+            <a href="tel:+1-2345-678-11">
+              <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> +1-2345-678-11
+              </p>
+            </a>
+          </div>
+          <div class="column mt-lg-0 mt-md-5">
+            <h4 class="mb-1">Signup for newsletter</h4>
+            <p>and get latest news and updates</p>
+            <form action="#" class="subscribe-form mt-4" method="post">
+              <div class="form-group">
+                <input type="email" name="subscribe" placeholder="Enter your email" required="">
+                <button class="btn btn-style btn-primary">Subscribe</button>
+              </div>
+            </form>
+            <ul class="footers-17_social">
+              <h4 class="d-inline mr-4">Follow us</h4>
+              <li><a href="#url" class="twitter"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#url" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
+              <li><a href="#url" class="instagram"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="d-grid grid-col-3 grids-content1 bottom-border">
+          <div class="columns copyright-grid align-self">
+            <p class="copy-footer-29">© 2020 Estate sale. All rights reserved | Designed by <a
+                href="https://w3layouts.com">W3layouts</a></p>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Wrapper End -->
-    <script data-cfasync="false" src="{{asset('../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery-migrate-3.0.0.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery.mmenu.all.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/ace-responsive-menu.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/bootstrap-select.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/isotop.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/snackbar.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/simplebar.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/parallax.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/scrollto.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery-scrolltofixed-min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery.counterup.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/slider.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/timepicker.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&amp;callback=initMap"type="text/javascript"></script>
-    <script type="text/javascript" src="{{asset('js/googlemaps1.js')}}"></script>
-    <!-- Custom script for all pages -->
-    <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
-</body>
+  </div>
+  <!-- move top -->
+  <button onclick="topFunction()" id="movetop" title="Go to top">
+    &#10548;
+  </button>
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction()
+    };
 
-<!-- Mirrored from grandetest.com/theme/findhouse-html/index7.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Dec 2020 14:24:10 GMT -->
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("movetop").style.display = "block";
+      } else {
+        document.getElementById("movetop").style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <!-- /move top -->
+</section>
+
+<!-- jQuery and Bootstrap JS -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+
+<script src="assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+
+<!-- stats number counter-->
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.countup.js"></script>
+<script>
+  $('.counter').countUp();
+</script>
+<!-- //stats number counter -->
+
+<!-- owlcarousel -->
+<script src="assets/js/owl.carousel.js"></script>
+<!-- script for blog post slider -->
+<script>
+  $(document).ready(function () {
+    $('.owl-blog').owlCarousel({
+      loop: true,
+      margin: 30,
+      nav: false,
+      responsiveClass: true,
+      autoplay: false,
+      autoplayTimeout: 5000,
+      autoplaySpeed: 1000,
+      autoplayHoverPause: false,
+      responsive: {
+        0: {
+          items: 1,
+          nav: true
+        },
+        480: {
+          items: 1,
+          nav: true
+        },
+        700: {
+          items: 1,
+          nav: true
+        },
+        1090: {
+          items: 1,
+          nav: true
+        }
+      }
+    })
+  })
+</script>
+<!-- //script for blog post slider -->
+
+<!-- script for tesimonials carousel slider -->
+<script>
+  $(document).ready(function () {
+    $("#owl-demo1").owlCarousel({
+      loop: true,
+      nav: false,
+      margin: 50,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+          nav: false
+        },
+        736: {
+          items: 1,
+          nav: false
+        }
+      }
+    })
+  })
+</script>
+<!-- //script for tesimonials carousel slider -->
+
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.popup-with-zoom-anim').magnificPopup({
+      type: 'inline',
+
+      fixedContentPos: false,
+      fixedBgPos: true,
+
+      overflowY: 'auto',
+
+      closeBtnInside: true,
+      preloader: false,
+
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-zoom-in'
+    });
+
+    $('.popup-with-move-anim').magnificPopup({
+      type: 'inline',
+
+      fixedContentPos: false,
+      fixedBgPos: true,
+
+      overflowY: 'auto',
+
+      closeBtnInside: true,
+      preloader: false,
+
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-slide-bottom'
+    });
+  });
+</script>
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+  $(function () {
+    $('.navbar-toggler').click(function () {
+      $('body').toggleClass('noscroll');
+    })
+  });
+</script>
+<!-- disable body scroll which navbar is in active -->
+
+<!-- MENU-JS -->
+<script>
+  $(window).on("scroll", function () {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 80) {
+      $("#site-header").addClass("nav-fixed");
+    } else {
+      $("#site-header").removeClass("nav-fixed");
+    }
+  });
+
+  //Main navigation Active Class Add Remove
+  $(".navbar-toggler").on("click", function () {
+    $("header").toggleClass("active");
+  });
+  $(document).on("ready", function () {
+    if ($(window).width() > 991) {
+      $("header").removeClass("active");
+    }
+    $(window).on("resize", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+    });
+  });
+</script>
+<!-- //MENU-JS -->
+
+<!-- bootstrap -->
+<script src="assets/js/bootstrap.min.js"></script>
+
+</body>
 
 </html>

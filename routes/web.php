@@ -51,7 +51,23 @@ Route::get('dashboard/tent/{tent}','TenantController@alltent')->name('alltent');
 Route::get('dashboard/property/mortgage','PropertyController@allProperty')->name('mortgage');
 Route::put('dashboard/prop/{proper}','PropertyController@Active')->name('active');
 Route::put('dashboard/prop/{prop}','PropertyController@notActive')->name('notactive');
-Route::get('dashboard/prop/{prop}/edit','PropertyController@renantedit')->name('renantedit');
+Route::get('/download/{file}','DocumentController@getDownload')->name('download');
+Route::get('/dashboard/theprofile/{profile}','ProfileController@theProfile')->name('theprofile');
+Route::get('/dashboard/theprofileland/{profile}','ProfileController@theProfileland')->name('theprofileland');
+Route::get('/dashboard/theshow/{property}','PropertyController@theshow')->name('theshow');
+
+Route::put('/dashboard/updatepropTent/{property}','PropertyController@updatepropTent')->name('updatepropTent');
+
+Route::get('/dashboard/specnote/{specnote}','NoteController@specificNote')->name('specnote');
+Route::get('/dashboard/allreplies','ReplyController@allReplies')->name('allReplies');
+Route::get('/dashboard/editproperty/{editproperty}', 'PropertyController@editProperty')->name('editproperty');
+
+
+Route::put('dashboard/approve/{appro}','NoteController@Approved')->name('approved');
+Route::put('dashboard/notapproved/{approo}','NoteController@notApproved')->name('notapproved');
+Route::get('dashboard/withdraw/{withdraw}','WalletController@withdraw')->name('withdraw');
+Route::put('dashboard/withdraw/{withdraw}','WalletController@withdrawupdate')->name('wallet.withdraw');
+
 // Route::post('dashboard/property/{prop}', 'PropertyController@Active')->name('the_active');
 // Route::post('dashboard/property/{prop}', 'PropertyController@notActive')->name('notactive');
 
@@ -71,8 +87,9 @@ Route::resource("dashboard/docs",'DocumentController');
 Route::resource("dashboard/bills",'BillController');
 Route::resource("dashboard/report",'ReportController');
 Route::resource("dashboard/wallet",'WalletController');
-
-// Route::resource("/dashboard/profile",'ProfileController');
+Route::resource("dashboard/note",'NoteController');
+Route::resource("dashboard/reply",'ReplyController');
+Route::resource("/kyc",'KycController');
 
 
 
@@ -88,8 +105,8 @@ Route::resource("dashboard/wallet",'WalletController');
 
 
 //PagesController
-Route::get('/pages/about', 'PagesController@about')->name('about');
-Route::get('/pages/contact', 'PagesController@contact')->name('contact');
+Route::get('/listings', 'PagesController@listing')->name('listing');
+Route::get('/single/{single}', 'PagesController@single')->name('single');
 Route::get('/pages/faq', 'PagesController@faq')->name('faq');
 Route::get('/pages/gallery', 'PagesController@gallery')->name('gallery');
 Route::get('/pages/service', 'PagesController@service')->name('service');

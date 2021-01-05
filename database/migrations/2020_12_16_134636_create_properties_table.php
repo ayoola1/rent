@@ -18,14 +18,20 @@ class CreatePropertiesTable extends Migration
             $table->integer('tenant_id')->nullable();
             $table->integer('type_id');
             $table->integer('landlord_id');
+            $table->integer('user_id');
             $table->string('name');
+
             // $table->float('price',8,2)->nullable();
             $table->integer('price')->nullable();
             $table->string('image');
             $table->string('address');
             $table->integer('bed');
             $table->integer('bath');
+            $table->integer('kitchen');
+            $table->string('contract_type');
             $table->integer('status');
+            $table->string('utilities');
+            $table->text('propert_desc');
             $table->timestamps();
         });
     }

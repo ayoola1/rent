@@ -6,11 +6,19 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use App\Tenant;
+
+use App\Landlord;
+
 use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Facades\Session;
 
 use App\Role;
+
+use App\Note;
+
+use App\Reply;
 
 class ProfileController extends Controller
 {
@@ -20,8 +28,10 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('profile.index');
+    {   
+        $notes = Note::all();
+        $replies = Reply::all();
+        return view('profile.index',compact('notes','replies'));
     }
 
     /**
@@ -52,9 +62,29 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {   
+        $notes = Note::all();
+        $replies = Reply::all();
         $user = User::findOrFail($id);
-        return view('profile.show',compact('user'));
+        // $tenant = Tenant::findOrFail($id);
+        $the_nant = Tenant::where('user_id','=', $user->id)->first();
+        return view('profile.show',compact('user','notes','the_nant','replies'));
+    }
+
+    public function theProfile($id)
+    {
+        $tenant = Tenant::findOrFail($id);
+        $notes = Note::all();
+        $replies = Reply::all();
+        return view('profile.theprofile',compact('tenant','notes','replies'));
+    }
+
+     public function theProfileland($id)
+    {
+        $landlordprofile = Landlord::findOrFail($id);
+        $notes = Note::all();
+        $replies = Reply::all();
+        return view('profile.theprofileland',compact('landlordprofile','notes','replies'));
     }
 
     /**

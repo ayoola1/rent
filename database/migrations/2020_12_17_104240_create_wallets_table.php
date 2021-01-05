@@ -16,10 +16,10 @@ class CreateWalletsTable extends Migration
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->integer('property_id');
+            // $table->integer('property_id');
             $table->integer('deposit')->nullable();
             $table->integer('withdraw')->nullable();
-            $table->integer('payment')->nullable();
+            $table->integer('transfer')->nullable();
             $table->timestamps();
         });
     }

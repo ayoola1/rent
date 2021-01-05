@@ -34,6 +34,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone_number' => ['required', 'numeric', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+
         ]);
         /* Get credentials from .env */
         $token = getenv("TWILIO_AUTH_TOKEN");
@@ -72,7 +73,8 @@ class RegisterController extends Controller
             $user = tap(User::where('phone_number', $data['phone_number']))->update(['isVerified' => true]);
             /* Authenticate user */
             Auth::login($user->first());
-            return redirect()->route('dashboard')->with(['message' => 'Phone number verified']);
+            // return redirect()->route('dashbord')->with(['message' => 'Phone number verified']);
+            return redirect()->route('kyc.index')->with(['message' => 'Phone number verified']);
         }
         return back()->with(['phone_number' => $data['phone_number'], 'error' => 'Invalid verification code entered!']);
     }

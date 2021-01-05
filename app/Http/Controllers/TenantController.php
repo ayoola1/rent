@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Session;
+
+use Illuminate\Support\Facades\Auth;
+
 use App\Tenant;
 
 use App\User;
@@ -13,6 +17,12 @@ use App\Role;
 use App\Landlord;
 
 use App\Property;
+
+use App\Note;
+
+use App\Reply;
+
+use App\Wallet;
 
 class TenantController extends Controller
 {
@@ -29,8 +39,12 @@ class TenantController extends Controller
 
 
     public function index()
-    {
-        return view('tenant');
+    {    
+        $notes = Note::all();
+        $replies = Reply::all();
+        $wallet_user_id = Auth::user()->id;
+        $ok_wallet = Wallet::where('user_id','=',$wallet_user_id)->first();
+        return view('tenant',compact('notes','replies','ok_wallet','wallet_user_id'));
     }
 
     /**
@@ -64,8 +78,9 @@ class TenantController extends Controller
     public function show($id)
     {
         $tenant = Tenant::find($id);
-
-        return view('admin.tenant.index',compact('tenant'));
+        $notes = Note::all();
+        $replies = Reply::all();
+        return view('admin.tenant.index',compact('tenant','notes','replies'));
     }
 
     /**
@@ -119,8 +134,9 @@ class TenantController extends Controller
     public function allTenant(){
 
         $tenants = Tenant::all();
-
-        return view('tenant.the_tenant',compact('tenants'));
+        $notes = Note::all();
+        $replies = Reply::all();
+        return view('tenant.the_tenant',compact('tenants','notes','replies'));
     }
 
       public function alltent($id){
@@ -128,7 +144,8 @@ class TenantController extends Controller
         // $land = Auth::user();
         $tent = Tenant::findOrFail($id);
         $properties = Property::all();
-
-        return view('tenant.show',compact('properties','tent'));
+        $notes = Note::all();
+        $replies = Reply::all();
+        return view('tenant.show',compact('properties','tent','notes','replies'));
     }
 }
