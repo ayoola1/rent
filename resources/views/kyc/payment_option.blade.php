@@ -1,4 +1,3 @@
-
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -10,7 +9,8 @@ Author URL: http://w3layouts.com
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Estate sale - Real Estate Category Bootstrap Responsive Website Template - Home : W3layouts</title>
+    <title>RentGage helps simplify acquisition of home via Mortgage.
+RentGage help you pay your rent conveniently monthly.</title>
 
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@ Author URL: http://w3layouts.com
               <span class="navbar-toggler-icon fa icon-close fa-times"></span>
           </button>
 
-           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-lg-5 mr-auto">
 
                 
@@ -62,10 +62,10 @@ Author URL: http://w3layouts.com
                    <li class="nav-item ">
                       <a class="nav-link" href="#">List Property</a>
                   </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{route('logout')}}">Logout</a>
+                    {{-- <li class="nav-item">
+                      <a class="nav-link" href="listing.html">Rent loan</a>
                   </li>
-                   {{-- <li class="nav-item ">
+                   <li class="nav-item ">
                       <a class="nav-link" href="listing.html">Mortgage Deals</a>
                   </li> --}}
 
@@ -76,6 +76,9 @@ Author URL: http://w3layouts.com
                       @auth
 
                      {{--  <a class="nav-link" href="{{ url('/home') }}">Home <i class="fa fa-sign-in" aria-hidden="true"></i><span class="sr-only">(current)</span></a> --}}
+                      <li class="nav-item">
+                      <a class="nav-link" href="{{route('logout')}}">Logout</a>
+                      </li>
                   </li>
 
                       @else
@@ -108,7 +111,6 @@ Author URL: http://w3layouts.com
               <!--//search-right-->
           </div>
 
-
           <!-- toggle switch for light and dark theme -->
          <!--  <div class="mobile-position">
               <nav class="navigation">
@@ -128,14 +130,179 @@ Author URL: http://w3layouts.com
   </div>
 </header>
 <!--/header-->
+{{-- <section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
+        </div>
+    </div>
+</section> --}}
+
+<section class="our-log bgc-fa" style="margin-bottom: 70px; margin-top: 120px;">
+
+    <div id="content">
+       <div class="container">
+         <div class="row">
+         
+              <p style="margin-top: 20px;position:relative; left: 550px;"><b>Setup Your Account</b></p>
+            
+         
+              <div class="col-md-3" style="position: relative;right: 170px;top: 100px">
+                  <div class="panel panel-default sidebar-menu">
+
+                      <div class="panel-heading">
+                          <h3 style="text-align: center;" class="panel-title">Account Setup</h3>
+                      </div>
+
+                      <div class="panel-body">
+
+                          <ul class="nav nav-pills nav-stacked">
+                              <li>
+                                  <a href="{{route('account',$property->id)}}"><i class="fa fa-user"></i> Account</a>
+                              </li>
+                             @if(Auth::user()->role->name =='tenant')
+                              <li class="active">
+                                  <a href="{{route('payment',$property->id)}}"><i class="fa fa-money"></i> Payment Option</a>
+                              </li>
+                              <li>
+                                    <a  href="{{route('payment_breakdown',$property->id)}}"><i class="fa fa-money"></i> Payment Breakdown</a>
+                                </li>
+                              
+                              <li>
+                                  <a href="{{route('finance',$property->id)}}"><i class="fa fa-money"></i> Financial Details</a>
+                              </li>
+                              <li>
+                                  <a href="{{route('rent_detail',$property->id)}}"><i class="fa fa-building "></i> Rent Details</a>
+                              </li>
+
+                               @else
+                                
+                                <li>
+                                    <a class="disabled-link" href="{{route('payment',$property->id)}}"><i class="fa fa-money"></i> Payment Option</a>
+                                </li>
+                                <li>
+                                    <a class="disabled-link" href="{{route('payment_breakdown',$property->id)}}"><i class="fa fa-money"></i> Payment Breakdown</a>
+                                </li>
+                                <li>
+                                    <a class="disabled-link" href="{{route('finance',$property->id)}}"><i class="fa fa-money"></i> Financial Details</a>
+                                </li>
+                                <li>
+                                    <a class="disabled-link" href="{{route('rent_detail',$property->id)}}"><i class="fa fa-building "></i> Rent Details</a>
+                                </li>
 
 
 
-@yield('content')
+
+                              @endif
+
+                             {{--  <li>
+                                  <a href="index.html"><i class="fa fa-sign-out"></i> Logout</a>
+                              </li> --}}
+
+                          </ul>
+                      </div>
+
+                  </div>
+              </div>
+
+             <div class="col-md-9" id="customer-orders" style="position: relative;left: 300px;top: -230px">
+                 
+                 <div class="panel panel-default sidebar-menu">
+                      <div class="panel-heading">
+                          <h3 style="text-align: center;" class="panel-title">Update Your Account</h3>
+                      </div>
+
+                     <div class="panel-body">  
+                     {{--  <div class="box"> --}}
+                          
+
+                         {{--  <p class="lead">Your orders on one place.</p>
+                          <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p> --}}
+
+                        {{-- <p>Contract Type : <b>{{$property->contract_type}}</b></p> --}}
+                        
+                        <div class="row">
+                           <div class="col-md-3"></div>
+                           <div class="col-md-6">
+                                 @include('includes.success_message')
+                                <form action="{{route('paymentupdate',$user->id)}}" method="post">
+                                @csrf
+                                <input type="hidden" name="_method" value="PUT">
+                                  <div class="form-group">
+                                    <div class="form-group">
+                                     <label for="">Contract Type:</label>
+                                     <input type="text" class="form-control" value="{{$property->contract_type}}" name="contract_type" readonly="">
+                                    </div>
+                                     <label for="">Accommondation Status:</label>
+                                     <select name="accom_status" id="" class="form-control fin" required="">
+                                        <option value="">--Select Accommondation Status--</option>
+                                        <option value="Want to rent a new place">Want to rent a new place</option>
+                                        <option value="Want to renew my rent">Want to renew my rent</option>
+                                     </select>
+                                  </div>
+
+                                  <div class="form-group">
+                                     <label for="">Amount of Rent (#):</label>
+                                     <input type="text" class="form-control" value="{{$property->price}}" name="rent_amount" readonly="">
+                                  </div>
+
+                                   <div class="form-group">
+                                     <label for="">How much is your Monthly (#):</label>
+                                      <input type="text" class="form-control" name="income" required="">
+                                  </div>
+
+                                  <div class="form-group">
+                                     <label for="">Payment Plan:</label>
+                                     <select name="payment_plan" id="" class="form-control fin" required="">
+                                        <option value="">--Select Payment Plan--</option>
+                                        <option value="1 Month">1 Month</option>
+                                        <option value="3 Months">3 Months</option>
+                                        <option value="6 Months">6 Months</option>
+                                        <option value="12 Months">12 Months</option>
+                                     </select>
+                                  </div>
+
+                                  <div class="form-group">
+                                     <input type="submit" class="btn btn-success" value="save">
+                                  </div>
+
+                               </form>
+                           </div>
+                        </div>
+                        
+                          
+                     {{--  </div> --}}
+                    </div>
+                 </div>
+
+
+                  
+              </div>
+              
+         </div>
+       </div>
+    </div>
+    
+  </section>
+
+  
+      {{--  <div class="row">
+             <div class="col-md-6">
+                <div class="form-group">
+                  <label for="name">FirstName</label>
+                   <input type="text" name="name" class="form-control" value="">
+                </div>
+            </div>
+            <div class="col-md-6">
+              <label for="name">Last Name</label>
+                <div class="form-group">
+                   <input type="text" name="last" class="form-control" value="">
+                </div>
+            </div>
+       </div> --}}
  
 
-<!--footer-->
-<section class="w3l-footers-20">
+
+  <section class="w3l-footers-20">
   <div class="footers20">
     <div class="container">
       <div class="footers20-content">
@@ -283,11 +450,11 @@ RentGage help you pay your rent conveniently monthly.</h4>
 <!-- jQuery and Bootstrap JS -->
 <script src="{{asset('assets/js/jquery-3.3.1.min.js')}}"></script>
 
-<script src="assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+<script src="{{asset('assets/js/theme-change.js')}}"></script><!-- theme switch js (light and dark)-->
 
 <!-- stats number counter-->
-<script src="assets/js/jquery.waypoints.min.js"></script>
-<script src="assets/js/jquery.countup.js"></script>
+<script src="{{asset('assets/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.countup.js')}}"></script>
 <script>
   $('.counter').countUp();
 </script>
@@ -353,7 +520,7 @@ RentGage help you pay your rent conveniently monthly.</h4>
 </script>
 <!-- //script for tesimonials carousel slider -->
 
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
 <script>
   $(document).ready(function () {
     $('.popup-with-zoom-anim').magnificPopup({
@@ -430,7 +597,7 @@ RentGage help you pay your rent conveniently monthly.</h4>
 <!-- //MENU-JS -->
 
 <!-- bootstrap -->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 
 </body>
 

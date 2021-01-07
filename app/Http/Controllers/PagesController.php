@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Property;
 
+use App\User;
+
+use Illuminate\Support\Facades\Auth;
+
 class PagesController extends Controller
 {
     public function listing(){
@@ -16,22 +20,23 @@ class PagesController extends Controller
 
     public function single($id){
         $property = Property::findOrFail($id);
-        return view ('newpages.single',compact('property'));
+        $user = Auth::user();
+        return view ('newpages.single',compact('property','user'));
     }
 
-    public function faq(){
-        return view ('pages.faq');
-    }
+    // public function faq(){
+    //     return view ('pages.faq');
+    // }
 
-    public function gallery(){
-        return view ('pages.gallery');
-    }
+    // public function gallery(){
+    //     return view ('pages.gallery');
+    // }
 
-    public function service(){
-        return view ('pages.service');
-    }
+    // public function service(){
+    //     return view ('pages.service');
+    // }
 
-    public function terms(){
-        return view ('pages.terms');
-    }
+    // public function terms(){
+    //     return view ('pages.terms');
+    // }
 }

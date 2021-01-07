@@ -73,8 +73,11 @@ Author URL: http://w3layouts.com
                   <li class="nav-item">
 
                       @auth
-
-                      <a class="nav-link" href="{{ url('/home') }}">Home <i class="fa fa-sign-in" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
+{{-- 
+                      <a class="nav-link" href="{{ url('/home') }}">Home <i class="fa fa-sign-in" aria-hidden="true"></i><span class="sr-only">(current)</span></a> --}}
+                       <li class="nav-item">
+                         <a class="nav-link" href="{{route('logout')}}">Logout</a>
+                       </li>
                   </li>
 
                       @else

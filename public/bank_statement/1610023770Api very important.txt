@@ -1,0 +1,7 @@
+
+
+https://www.twilio.com/blog/build-secure-api-php-laravel-passport
+
+https://laravelarticle.com/deploy-laravel-on-shared-hosting
+
+https://www.itsolutionstuff.com/post/laravel-6-rest-api-with-passport-tutorialexample.html

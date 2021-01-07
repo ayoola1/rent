@@ -114,13 +114,20 @@
                         <article class="post">
                             {{-- <figure class="post-thumb"><img src="assets/images/l5.jpg" class="radius-image" alt="">
                             </figure> --}}
-                            <div class="text mb-0"><a href="#blog-single">Total cost Breakdown
+                            <div class="text mb-0"><a href="#blog-single">Total cost Breakdown {{-- {{$user->id}} --}}
                                 </a>
                                 <div class="post-info">Price per year:   <span style="margin-left: 107px;">#{{number_format($property->price,0,'',',')}}</span></div>
                                 <div class="post-info">Agency and Agreement fee: &nbsp; &nbsp; # 0</div>
                             </div>
                         </article>
-                        <button type="submit" class="btn btn-primary btn-style w-100">Rent now</button>
+                          @auth
+                           {{-- <button type="submit" class="btn btn-primary btn-style w-100">Rent now</button> --}}
+                           <a href="{{route('account',$property->id)}}" class="btn btn-primary btn-style w-100">Rent Now</a>
+                          @else
+                         {{--  <button type="submit" class="btn btn-primary btn-style w-100">Rent now</button> --}}
+                          <a href="{{route('login')}}" class="btn btn-primary btn-style w-100">Rent Now</a>
+                        @endauth
+                        
                     </div>
 
 

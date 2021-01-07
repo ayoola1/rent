@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/home', function () {
 //     return view('home')->name('home');
@@ -43,6 +43,7 @@ Route::post('/verify', 'RegisterController@verify')->name('verify');
 
 // SpecialControllers
 
+Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('dashboard/admin','AdminController@index')->name('admin')->middleware('admin');
 Route::get('dashboard/land','LandlordController@allLandlord')->name('land');
 Route::get('dashboard/land/{land}','LandlordController@allLand')->name('allland');
@@ -67,8 +68,22 @@ Route::put('dashboard/approve/{appro}','NoteController@Approved')->name('approve
 Route::put('dashboard/notapproved/{approo}','NoteController@notApproved')->name('notapproved');
 Route::get('dashboard/withdraw/{withdraw}','WalletController@withdraw')->name('withdraw');
 Route::put('dashboard/withdraw/{withdraw}','WalletController@withdrawupdate')->name('wallet.withdraw');
+Route::get("/accountverification/{account}",'KycController@accountActivation')->name('account');
+Route::get("/accountverification/payment/{account}",'KycController@accountPaymentOption')->name('payment');
+Route::get("/accountverification/finance/{account}",'KycController@financialActivation')->name('finance');
+Route::get("/accountverification/rent/{account}",'KycController@rentDetailsActivation')->name('rent_detail');
 
-// Route::post('dashboard/property/{prop}', 'PropertyController@Active')->name('the_active');
+Route::get("/accountverification/breakdown/{account}",'KycController@breakdown')->name('payment_breakdown');
+
+
+Route::put('/accountupdate/{accountupdate}', 'kycController@accountupdate')->name('accountupdate');
+
+Route::put('/paymentupdate/{paymentupdate}', 'kycController@paymentupdate')->name('paymentupdate');
+
+Route::put('/calbreakdown/{calpaymentupdate}', 'kycController@calbreakdown')->name('calbreakdown');
+
+Route::put('/financialupdate/{financialupdate}', 'kycController@financialupdate')->name('financialupdate');
+
 // Route::post('dashboard/property/{prop}', 'PropertyController@notActive')->name('notactive');
 
 

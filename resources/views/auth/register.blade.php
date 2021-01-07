@@ -74,7 +74,10 @@ Author URL: http://w3layouts.com
 
                       @auth
 
-                      <a class="nav-link" href="{{ url('/home') }}">Home <i class="fa fa-sign-in" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
+                     {{--  <a class="nav-link" href="{{ url('/home') }}">Home <i class="fa fa-sign-in" aria-hidden="true"></i><span class="sr-only">(current)</span></a> --}}
+                     
+                      <a class="nav-link" href="{{ route('logout') }}">Logout </a>
+                
                   </li>
 
                       @else
@@ -154,6 +157,19 @@ Author URL: http://w3layouts.com
                                     </span>
                                 @endif
                             </div>
+
+             <div class="form-group input-group">
+               <input type="text" class="form-control {{ $errors->has('last') ? ' is-invalid' : '' }}" name="last" value="{{ old('lastname') }}" id="exampleInputName" placeholder="Lastname" required>
+               
+
+               @if ($errors->has('last'))
+                   <span class="invalid-feedback" role="alert">
+                       <strong>{{ $errors->first('last') }}</strong>
+                   </span>
+               @endif
+            </div>
+
+
 							<div class="form-group input-group">
                                 <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" id="exampleInputEmail2" placeholder="Email" required="">
                                
@@ -186,9 +202,7 @@ Author URL: http://w3layouts.com
                                 @endif
                             </div>
 
-							<div class="form-group">
-						    	<input type="password" class="form-control" id=" exampleInputPassword3" name="password_confirmation" placeholder="Re-enter password">
-							</div>
+							
 
 							<button type="submit" class="btn btn-log btn-block btn-thm2">Register</button>
 							<div class="divide">

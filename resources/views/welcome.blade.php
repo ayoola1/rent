@@ -63,6 +63,10 @@ Author URL: http://w3layouts.com
                    <li class="nav-item ">
                       <a class="nav-link" href="#">List Property</a>
                   </li>
+
+                  {{-- <li class="nav-item">
+                      <a class="nav-link" href="{{route('logout')}}">Logout</a>
+                  </li> --}}
                    {{--  <li class="nav-item">
                       <a class="nav-link" href="listing.html">Rent loan</a>
                   </li>
@@ -77,6 +81,7 @@ Author URL: http://w3layouts.com
                       @auth
 
                     {{--   <a class="nav-link" href="{{ url('/home') }}">Home <i class="fa fa-sign-in" aria-hidden="true"></i><span class="sr-only">(current)</span></a> --}}
+                     <a class="nav-link" href="{{ route('logout') }}">Logout </a>
                   </li>
 
                       @else

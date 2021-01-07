@@ -126,6 +126,8 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Deposits</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"># {{$ok_wallet ? number_format($ok_wallet->deposit,0,'',',') : 0}}</div>
+
+                        <a style="margin-top: 5px;margin-left: 70px;" href="{{route('wallet.show',Auth::user()->id)}}" class="btn btn-info btn-sm">fund</a>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-money-check fa-2x text-gray-300"></i>
@@ -143,6 +145,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Withdraws </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"># {{$ok_wallet ? number_format($ok_wallet->withdraw,0,'',',') : 0}}</div>
+                       <a style="margin-top: 5px;margin-left: 70px;" href="{{route('withdraw',Auth::user()->id)}}" class="btn btn-info btn-sm">withdraw</a>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-morney-bill fa-2x text-gray-300"></i>

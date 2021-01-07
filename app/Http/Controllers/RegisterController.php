@@ -31,6 +31,7 @@ class RegisterController extends Controller
     {
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'last' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone_number' => ['required', 'numeric', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
@@ -46,6 +47,7 @@ class RegisterController extends Controller
             ->create($data['phone_number'], "sms");
         User::create([
             'name' => $data['name'],
+            'last' => $data['last'],
             'email' => $data['email'],
             'phone_number' => $data['phone_number'],
             'password' => Hash::make($data['password']),
@@ -74,7 +76,8 @@ class RegisterController extends Controller
             /* Authenticate user */
             Auth::login($user->first());
             // return redirect()->route('dashbord')->with(['message' => 'Phone number verified']);
-            return redirect()->route('kyc.index')->with(['message' => 'Phone number verified']);
+            // return redirect()->route('kyc.index')->with(['message' => 'Phone number verified']);
+             return redirect()->route('welcome')->with(['message' => 'Phone number verified']);
         }
         return back()->with(['phone_number' => $data['phone_number'], 'error' => 'Invalid verification code entered!']);
     }
